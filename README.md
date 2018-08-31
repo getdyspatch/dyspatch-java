@@ -47,30 +47,26 @@ Please follow the [installation](#installation) instruction and execute the foll
 import io.dyspatch.client.*;
 import io.dyspatch.client.auth.*;
 import io.dyspatch.client.model.*;
-import io.dyspatch.client.api.LocalizationsApi;
+import io.dyspatch.client.api.TemplatesApi;
 
-import java.io.File;
-import java.util.*;
 
-public class LocalizationsApiExample {
-
+public class Main {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-        
+
         // Configure API key authorization: Bearer
         ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-        Bearer.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //Bearer.setApiKeyPrefix("Token");
+        Bearer.setApiKey("DYSPATCH_API_KEY");
+        Bearer.setApiKeyPrefix("Bearer");
 
-        LocalizationsApi apiInstance = new LocalizationsApi();
-        String localizationId = "localizationId_example"; // String | A localization ID
-        String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
+        TemplatesApi apiInstance = new TemplatesApi();
+        String accept = "application/vnd.dyspatch.2018.08+json"; // String | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
+        
         try {
-            LocalizationRead result = apiInstance.localizationsLocalizationIdGet(localizationId, accept);
+            ApiResponse<TemplatesRead> result = apiInstance.templatesGetWithHttpInfo(accept, "");
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LocalizationsApi#localizationsLocalizationIdGet");
+            System.err.println("Exception when calling TemplatesApi#templatesGet");
             e.printStackTrace();
         }
     }
