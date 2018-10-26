@@ -34,7 +34,7 @@ Bearer.setApiKey("YOUR API KEY");
 //Bearer.setApiKeyPrefix("Token");
 
 TemplatesApi apiInstance = new TemplatesApi();
-String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
+String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json
 String cursor = "cursor_example"; // String | A cursor value used to retrieve a specific page from a paginated result set.
 try {
     TemplatesRead result = apiInstance.templatesGet(accept, cursor);
@@ -49,7 +49,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json |
  **cursor** | **String**| A cursor value used to retrieve a specific page from a paginated result set. | [optional]
 
 ### Return type
@@ -92,7 +92,7 @@ Bearer.setApiKey("YOUR API KEY");
 
 TemplatesApi apiInstance = new TemplatesApi();
 String templateId = "templateId_example"; // String | A template ID
-String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
+String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json
 try {
     TemplateRead result = apiInstance.templatesTemplateIdGet(templateId, accept);
     System.out.println(result);
@@ -107,7 +107,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **String**| A template ID |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json |
 
 ### Return type
 

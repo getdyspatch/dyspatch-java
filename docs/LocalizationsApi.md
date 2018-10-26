@@ -34,7 +34,7 @@ Bearer.setApiKey("YOUR API KEY");
 
 LocalizationsApi apiInstance = new LocalizationsApi();
 String localizationId = "localizationId_example"; // String | A localization ID
-String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2018.08\", set the value to \"application/vnd.dyspatch.2018.08+json\"
+String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json
 try {
     LocalizationRead result = apiInstance.localizationsLocalizationIdGet(localizationId, accept);
     System.out.println(result);
@@ -49,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **localizationId** | **String**| A localization ID |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json |
 
 ### Return type
 

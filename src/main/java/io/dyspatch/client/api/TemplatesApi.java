@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch. 
+ * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.   - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) 
  *
  * OpenAPI spec version: 2018.08
  * Contact: support@dyspatch.io
@@ -58,7 +58,7 @@ public class TemplatesApi {
 
     /**
      * Build call for templatesGet
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
@@ -127,7 +127,7 @@ public class TemplatesApi {
     /**
      * List Templates
      * Gets a list of Template Metadata objects for all templates. Up to 25 results returned before results are paginated.
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @return TemplatesRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -140,7 +140,7 @@ public class TemplatesApi {
     /**
      * List Templates
      * Gets a list of Template Metadata objects for all templates. Up to 25 results returned before results are paginated.
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @return ApiResponse&lt;TemplatesRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -154,7 +154,7 @@ public class TemplatesApi {
     /**
      * List Templates (asynchronously)
      * Gets a list of Template Metadata objects for all templates. Up to 25 results returned before results are paginated.
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -189,7 +189,7 @@ public class TemplatesApi {
     /**
      * Build call for templatesTemplateIdGet
      * @param templateId A template ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -262,7 +262,7 @@ public class TemplatesApi {
      * Get Template by ID
      * Gets a template object with the matching ID. If the template has published content the \&quot;compiled\&quot; field will contain the template .
      * @param templateId A template ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @return TemplateRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -275,7 +275,7 @@ public class TemplatesApi {
      * Get Template by ID
      * Gets a template object with the matching ID. If the template has published content the \&quot;compiled\&quot; field will contain the template .
      * @param templateId A template ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @return ApiResponse&lt;TemplateRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -289,7 +289,7 @@ public class TemplatesApi {
      * Get Template by ID (asynchronously)
      * Gets a template object with the matching ID. If the template has published content the \&quot;compiled\&quot; field will contain the template .
      * @param templateId A template ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
