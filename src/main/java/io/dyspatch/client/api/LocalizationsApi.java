@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch. 
+ * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.   - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) 
  *
  * OpenAPI spec version: 2018.08
  * Contact: support@dyspatch.io
@@ -58,7 +58,7 @@ public class LocalizationsApi {
     /**
      * Build call for localizationsLocalizationIdGet
      * @param localizationId A localization ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -131,7 +131,7 @@ public class LocalizationsApi {
      * Get Localization Object by ID
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @return LocalizationRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -144,7 +144,7 @@ public class LocalizationsApi {
      * Get Localization Object by ID
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @return ApiResponse&lt;LocalizationRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -158,7 +158,7 @@ public class LocalizationsApi {
      * Get Localization Object by ID (asynchronously)
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2018.08\&quot;, set the value to \&quot;application/vnd.dyspatch.2018.08+json\&quot; (required)
+     * @param accept A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
