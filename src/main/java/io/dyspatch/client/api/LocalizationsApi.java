@@ -58,7 +58,7 @@ public class LocalizationsApi {
      * Build call for localizationsLocalizationIdGet
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -131,7 +131,7 @@ public class LocalizationsApi {
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @return LocalizationRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -145,7 +145,7 @@ public class LocalizationsApi {
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @return ApiResponse&lt;LocalizationRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -160,7 +160,7 @@ public class LocalizationsApi {
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
