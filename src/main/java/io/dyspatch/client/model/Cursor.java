@@ -25,7 +25,7 @@ import java.io.IOException;
  * Information about paginated results
  */
 @Schema(description = "Information about paginated results")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-06-06T15:58:00.720-07:00[America/Vancouver]")public class Cursor {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-06-11T13:58:00.092-07:00[America/Vancouver]")public class Cursor {
 
   @SerializedName("next")
   private String next = null;

@@ -12,7 +12,7 @@
 
 package io.dyspatch.client;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-06-06T15:58:00.720-07:00[America/Vancouver]")public class Configuration {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2019-06-11T13:58:00.092-07:00[America/Vancouver]")public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
     /**

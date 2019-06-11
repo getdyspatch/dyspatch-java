@@ -58,13 +58,12 @@ public class LocalizationsApi {
      * Build call for localizationsLocalizationIdGet
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call localizationsLocalizationIdGetCall(String localizationId, String targetLanguage, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call localizationsLocalizationIdGetCall(String localizationId, String targetLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -77,8 +76,6 @@ public class LocalizationsApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("targetLanguage", targetLanguage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (accept != null)
-        localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -111,13 +108,13 @@ public class LocalizationsApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call localizationsLocalizationIdGetValidateBeforeCall(String localizationId, String targetLanguage, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call localizationsLocalizationIdGetValidateBeforeCall(String localizationId, String targetLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'localizationId' is set
         if (localizationId == null) {
             throw new ApiException("Missing the required parameter 'localizationId' when calling localizationsLocalizationIdGet(Async)");
         }
         
-        com.squareup.okhttp.Call call = localizationsLocalizationIdGetCall(localizationId, targetLanguage, accept, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = localizationsLocalizationIdGetCall(localizationId, targetLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -131,12 +128,11 @@ public class LocalizationsApi {
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @return LocalizationRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public LocalizationRead localizationsLocalizationIdGet(String localizationId, String targetLanguage, String accept) throws ApiException {
-        ApiResponse<LocalizationRead> resp = localizationsLocalizationIdGetWithHttpInfo(localizationId, targetLanguage, accept);
+    public LocalizationRead localizationsLocalizationIdGet(String localizationId, String targetLanguage) throws ApiException {
+        ApiResponse<LocalizationRead> resp = localizationsLocalizationIdGetWithHttpInfo(localizationId, targetLanguage);
         return resp.getData();
     }
 
@@ -145,12 +141,11 @@ public class LocalizationsApi {
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @return ApiResponse&lt;LocalizationRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<LocalizationRead> localizationsLocalizationIdGetWithHttpInfo(String localizationId, String targetLanguage, String accept) throws ApiException {
-        com.squareup.okhttp.Call call = localizationsLocalizationIdGetValidateBeforeCall(localizationId, targetLanguage, accept, null, null);
+    public ApiResponse<LocalizationRead> localizationsLocalizationIdGetWithHttpInfo(String localizationId, String targetLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = localizationsLocalizationIdGetValidateBeforeCall(localizationId, targetLanguage, null, null);
         Type localVarReturnType = new TypeToken<LocalizationRead>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -160,12 +155,11 @@ public class LocalizationsApi {
      * Returns a specific localization object with a matching ID
      * @param localizationId A localization ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call localizationsLocalizationIdGetAsync(String localizationId, String targetLanguage, String accept, final ApiCallback<LocalizationRead> callback) throws ApiException {
+    public com.squareup.okhttp.Call localizationsLocalizationIdGetAsync(String localizationId, String targetLanguage, final ApiCallback<LocalizationRead> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -186,7 +180,7 @@ public class LocalizationsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = localizationsLocalizationIdGetValidateBeforeCall(localizationId, targetLanguage, accept, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = localizationsLocalizationIdGetValidateBeforeCall(localizationId, targetLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<LocalizationRead>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="templatesGet"></a>
 # **templatesGet**
-> TemplatesRead templatesGet(cursor, accept)
+> TemplatesRead templatesGet(cursor)
 
 List Templates
 
@@ -29,14 +29,12 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 // Configure API key authorization: Bearer
 ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
 Bearer.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.setApiKeyPrefix("Token");
+Bearer.setApiKeyPrefix("Bearer");
 
 TemplatesApi apiInstance = new TemplatesApi();
 String cursor = "cursor_example"; // String | A cursor value used to retrieve a specific page from a paginated result set.
-String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json"
 try {
-    TemplatesRead result = apiInstance.templatesGet(cursor, accept);
+    TemplatesRead result = apiInstance.templatesGet(cursor);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TemplatesApi#templatesGet");
@@ -49,7 +47,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **cursor** | **String**| A cursor value used to retrieve a specific page from a paginated result set. | [optional]
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" | [optional]
 
 ### Return type
 
@@ -66,7 +63,7 @@ Name | Type | Description  | Notes
 
 <a name="templatesTemplateIdGet"></a>
 # **templatesTemplateIdGet**
-> TemplateRead templatesTemplateIdGet(templateId, targetLanguage, accept)
+> TemplateRead templatesTemplateIdGet(templateId, targetLanguage)
 
 Get Template by ID
 
@@ -86,15 +83,13 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 // Configure API key authorization: Bearer
 ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
 Bearer.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.setApiKeyPrefix("Token");
+Bearer.setApiKeyPrefix("Bearer");
 
 TemplatesApi apiInstance = new TemplatesApi();
 String templateId = "templateId_example"; // String | A template ID
 String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Should only be used for visual templates.
-String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.03\", set the value to \"application/vnd.dyspatch.2019.03+json\"
 try {
-    TemplateRead result = apiInstance.templatesTemplateIdGet(templateId, targetLanguage, accept);
+    TemplateRead result = apiInstance.templatesTemplateIdGet(templateId, targetLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling TemplatesApi#templatesTemplateIdGet");
@@ -108,7 +103,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **String**| A template ID |
  **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [optional] [enum: html, jinja, handlebars, ampscript, freemarker, cheetah]
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" | [optional]
 
 ### Return type
 

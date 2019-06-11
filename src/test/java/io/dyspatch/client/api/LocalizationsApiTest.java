@@ -43,8 +43,7 @@ public class LocalizationsApiTest {
     public void localizationsLocalizationIdGetTest() throws ApiException {
         String localizationId = null;
         String targetLanguage = null;
-        String accept = null;
-        LocalizationRead response = api.localizationsLocalizationIdGet(localizationId, targetLanguage, accept);
+        LocalizationRead response = api.localizationsLocalizationIdGet(localizationId, targetLanguage);
 
         // TODO: test validations
     }

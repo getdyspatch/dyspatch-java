@@ -58,13 +58,12 @@ public class TemplatesApi {
     /**
      * Build call for templatesGet
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call templatesGetCall(String cursor, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call templatesGetCall(String cursor, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -76,8 +75,6 @@ public class TemplatesApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("cursor", cursor));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (accept != null)
-        localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -110,9 +107,9 @@ public class TemplatesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call templatesGetValidateBeforeCall(String cursor, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call templatesGetValidateBeforeCall(String cursor, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
-        com.squareup.okhttp.Call call = templatesGetCall(cursor, accept, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = templatesGetCall(cursor, progressListener, progressRequestListener);
         return call;
 
         
@@ -125,12 +122,11 @@ public class TemplatesApi {
      * List Templates
      * Gets a list of Template Metadata objects for all templates. Up to 25 results returned before results are paginated.
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @return TemplatesRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TemplatesRead templatesGet(String cursor, String accept) throws ApiException {
-        ApiResponse<TemplatesRead> resp = templatesGetWithHttpInfo(cursor, accept);
+    public TemplatesRead templatesGet(String cursor) throws ApiException {
+        ApiResponse<TemplatesRead> resp = templatesGetWithHttpInfo(cursor);
         return resp.getData();
     }
 
@@ -138,12 +134,11 @@ public class TemplatesApi {
      * List Templates
      * Gets a list of Template Metadata objects for all templates. Up to 25 results returned before results are paginated.
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @return ApiResponse&lt;TemplatesRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TemplatesRead> templatesGetWithHttpInfo(String cursor, String accept) throws ApiException {
-        com.squareup.okhttp.Call call = templatesGetValidateBeforeCall(cursor, accept, null, null);
+    public ApiResponse<TemplatesRead> templatesGetWithHttpInfo(String cursor) throws ApiException {
+        com.squareup.okhttp.Call call = templatesGetValidateBeforeCall(cursor, null, null);
         Type localVarReturnType = new TypeToken<TemplatesRead>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -152,12 +147,11 @@ public class TemplatesApi {
      * List Templates (asynchronously)
      * Gets a list of Template Metadata objects for all templates. Up to 25 results returned before results are paginated.
      * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call templatesGetAsync(String cursor, String accept, final ApiCallback<TemplatesRead> callback) throws ApiException {
+    public com.squareup.okhttp.Call templatesGetAsync(String cursor, final ApiCallback<TemplatesRead> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -178,7 +172,7 @@ public class TemplatesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = templatesGetValidateBeforeCall(cursor, accept, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = templatesGetValidateBeforeCall(cursor, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TemplatesRead>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -187,13 +181,12 @@ public class TemplatesApi {
      * Build call for templatesTemplateIdGet
      * @param templateId A template ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call templatesTemplateIdGetCall(String templateId, String targetLanguage, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call templatesTemplateIdGetCall(String templateId, String targetLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -206,8 +199,6 @@ public class TemplatesApi {
         localVarQueryParams.addAll(apiClient.parameterToPair("targetLanguage", targetLanguage));
 
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        if (accept != null)
-        localVarHeaderParams.put("Accept", apiClient.parameterToString(accept));
 
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
@@ -240,13 +231,13 @@ public class TemplatesApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call templatesTemplateIdGetValidateBeforeCall(String templateId, String targetLanguage, String accept, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call templatesTemplateIdGetValidateBeforeCall(String templateId, String targetLanguage, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         // verify the required parameter 'templateId' is set
         if (templateId == null) {
             throw new ApiException("Missing the required parameter 'templateId' when calling templatesTemplateIdGet(Async)");
         }
         
-        com.squareup.okhttp.Call call = templatesTemplateIdGetCall(templateId, targetLanguage, accept, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = templatesTemplateIdGetCall(templateId, targetLanguage, progressListener, progressRequestListener);
         return call;
 
         
@@ -257,44 +248,41 @@ public class TemplatesApi {
 
     /**
      * Get Template by ID
-     * Gets a template object with the matching ID. If the template has published content the \&quot;compiled\&quot; field will contain the template .
+     * Gets a template object with the matching ID. If the template has published content the "compiled" field will contain the template .
      * @param templateId A template ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @return TemplateRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public TemplateRead templatesTemplateIdGet(String templateId, String targetLanguage, String accept) throws ApiException {
-        ApiResponse<TemplateRead> resp = templatesTemplateIdGetWithHttpInfo(templateId, targetLanguage, accept);
+    public TemplateRead templatesTemplateIdGet(String templateId, String targetLanguage) throws ApiException {
+        ApiResponse<TemplateRead> resp = templatesTemplateIdGetWithHttpInfo(templateId, targetLanguage);
         return resp.getData();
     }
 
     /**
      * Get Template by ID
-     * Gets a template object with the matching ID. If the template has published content the \&quot;compiled\&quot; field will contain the template .
+     * Gets a template object with the matching ID. If the template has published content the "compiled" field will contain the template .
      * @param templateId A template ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @return ApiResponse&lt;TemplateRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<TemplateRead> templatesTemplateIdGetWithHttpInfo(String templateId, String targetLanguage, String accept) throws ApiException {
-        com.squareup.okhttp.Call call = templatesTemplateIdGetValidateBeforeCall(templateId, targetLanguage, accept, null, null);
+    public ApiResponse<TemplateRead> templatesTemplateIdGetWithHttpInfo(String templateId, String targetLanguage) throws ApiException {
+        com.squareup.okhttp.Call call = templatesTemplateIdGetValidateBeforeCall(templateId, targetLanguage, null, null);
         Type localVarReturnType = new TypeToken<TemplateRead>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * Get Template by ID (asynchronously)
-     * Gets a template object with the matching ID. If the template has published content the \&quot;compiled\&quot; field will contain the template .
+     * Gets a template object with the matching ID. If the template has published content the "compiled" field will contain the template .
      * @param templateId A template ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (optional)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.03\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.03+json\&quot; (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call templatesTemplateIdGetAsync(String templateId, String targetLanguage, String accept, final ApiCallback<TemplateRead> callback) throws ApiException {
+    public com.squareup.okhttp.Call templatesTemplateIdGetAsync(String templateId, String targetLanguage, final ApiCallback<TemplateRead> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -315,7 +303,7 @@ public class TemplatesApi {
             };
         }
 
-        com.squareup.okhttp.Call call = templatesTemplateIdGetValidateBeforeCall(templateId, targetLanguage, accept, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = templatesTemplateIdGetValidateBeforeCall(templateId, targetLanguage, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<TemplateRead>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

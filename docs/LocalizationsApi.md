@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 <a name="localizationsLocalizationIdGet"></a>
 # **localizationsLocalizationIdGet**
-> LocalizationRead localizationsLocalizationIdGet(localizationId, targetLanguage, accept)
+> LocalizationRead localizationsLocalizationIdGet(localizationId, targetLanguage)
 
 Get Localization Object by ID
 
@@ -28,15 +28,13 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 // Configure API key authorization: Bearer
 ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
 Bearer.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.setApiKeyPrefix("Token");
+Bearer.setApiKeyPrefix("Bearer");
 
 LocalizationsApi apiInstance = new LocalizationsApi();
 String localizationId = "localizationId_example"; // String | A localization ID
 String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Should only be used for visual templates.
-String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json"
 try {
-    LocalizationRead result = apiInstance.localizationsLocalizationIdGet(localizationId, targetLanguage, accept);
+    LocalizationRead result = apiInstance.localizationsLocalizationIdGet(localizationId, targetLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LocalizationsApi#localizationsLocalizationIdGet");
@@ -50,7 +48,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **localizationId** | **String**| A localization ID |
  **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [optional] [enum: html, jinja, handlebars, ampscript, freemarker, cheetah]
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version "2019.03", set the value to "application/vnd.dyspatch.2019.03+json" | [optional]
 
 ### Return type
 

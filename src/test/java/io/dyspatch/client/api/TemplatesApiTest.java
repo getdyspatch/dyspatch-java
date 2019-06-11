@@ -43,8 +43,7 @@ public class TemplatesApiTest {
     @Test
     public void templatesGetTest() throws ApiException {
         String cursor = null;
-        String accept = null;
-        TemplatesRead response = api.templatesGet(cursor, accept);
+        TemplatesRead response = api.templatesGet(cursor);
 
         // TODO: test validations
     }
@@ -60,8 +59,7 @@ public class TemplatesApiTest {
     public void templatesTemplateIdGetTest() throws ApiException {
         String templateId = null;
         String targetLanguage = null;
-        String accept = null;
-        TemplateRead response = api.templatesTemplateIdGet(templateId, targetLanguage, accept);
+        TemplateRead response = api.templatesTemplateIdGet(templateId, targetLanguage);
 
         // TODO: test validations
     }
