@@ -1,15 +1,14 @@
 # LocalizationsApi
 
-All URIs are relative to *https://api.dyspatch.io*
+All URIs are relative to *https://api.dyspatch.io/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**localizationsLocalizationIdGet**](LocalizationsApi.md#localizationsLocalizationIdGet) | **GET** /localizations/{localizationId} | Get Localization Object by ID
 
-
 <a name="localizationsLocalizationIdGet"></a>
 # **localizationsLocalizationIdGet**
-> LocalizationRead localizationsLocalizationIdGet(localizationId, accept)
+> LocalizationRead localizationsLocalizationIdGet(localizationId, targetLanguage)
 
 Get Localization Object by ID
 
@@ -29,14 +28,13 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 // Configure API key authorization: Bearer
 ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
 Bearer.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Bearer.setApiKeyPrefix("Token");
+Bearer.setApiKeyPrefix("Bearer");
 
 LocalizationsApi apiInstance = new LocalizationsApi();
 String localizationId = "localizationId_example"; // String | A localization ID
-String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json
+String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Should only be used for visual templates.
 try {
-    LocalizationRead result = apiInstance.localizationsLocalizationIdGet(localizationId, accept);
+    LocalizationRead result = apiInstance.localizationsLocalizationIdGet(localizationId, targetLanguage);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling LocalizationsApi#localizationsLocalizationIdGet");
@@ -49,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **localizationId** | **String**| A localization ID |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version 2018.08, set the value to application/vnd.dyspatch.2018.08+json |
+ **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [optional] [enum: html, jinja, handlebars, ampscript, freemarker, cheetah]
 
 ### Return type
 
@@ -62,5 +60,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2018.08+json
+ - **Accept**: application/vnd.dyspatch.2019.03+json
 
