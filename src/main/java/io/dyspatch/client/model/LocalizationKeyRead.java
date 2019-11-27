@@ -20,67 +20,55 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.dyspatch.client.model.Cursor;
-import io.dyspatch.client.model.TemplateMetaRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * TemplatesRead
+ * LocalizationKeyRead
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
-public class TemplatesRead {
-  @SerializedName("cursor")
-  private Cursor cursor = null;
+public class LocalizationKeyRead {
+  @SerializedName("key")
+  private String key = null;
 
-  @SerializedName("data")
-  private List<TemplateMetaRead> data = null;
+  @SerializedName("comment")
+  private String comment = null;
 
-  public TemplatesRead cursor(Cursor cursor) {
-    this.cursor = cursor;
+  public LocalizationKeyRead key(String key) {
+    this.key = key;
     return this;
   }
 
    /**
-   * Get cursor
-   * @return cursor
+   * Get key
+   * @return key
   **/
   @ApiModelProperty(value = "")
-  public Cursor getCursor() {
-    return cursor;
+  public String getKey() {
+    return key;
   }
 
-  public void setCursor(Cursor cursor) {
-    this.cursor = cursor;
+  public void setKey(String key) {
+    this.key = key;
   }
 
-  public TemplatesRead data(List<TemplateMetaRead> data) {
-    this.data = data;
-    return this;
-  }
-
-  public TemplatesRead addDataItem(TemplateMetaRead dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<TemplateMetaRead>();
-    }
-    this.data.add(dataItem);
+  public LocalizationKeyRead comment(String comment) {
+    this.comment = comment;
     return this;
   }
 
    /**
-   * A list of template metadata objects
-   * @return data
+   * Get comment
+   * @return comment
   **/
-  @ApiModelProperty(value = "A list of template metadata objects")
-  public List<TemplateMetaRead> getData() {
-    return data;
+  @ApiModelProperty(value = "")
+  public String getComment() {
+    return comment;
   }
 
-  public void setData(List<TemplateMetaRead> data) {
-    this.data = data;
+  public void setComment(String comment) {
+    this.comment = comment;
   }
 
 
@@ -92,24 +80,24 @@ public class TemplatesRead {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TemplatesRead templatesRead = (TemplatesRead) o;
-    return Objects.equals(this.cursor, templatesRead.cursor) &&
-        Objects.equals(this.data, templatesRead.data);
+    LocalizationKeyRead localizationKeyRead = (LocalizationKeyRead) o;
+    return Objects.equals(this.key, localizationKeyRead.key) &&
+        Objects.equals(this.comment, localizationKeyRead.comment);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cursor, data);
+    return Objects.hash(key, comment);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TemplatesRead {\n");
+    sb.append("class LocalizationKeyRead {\n");
     
-    sb.append("    cursor: ").append(toIndentedString(cursor)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("    key: ").append(toIndentedString(key)).append("\n");
+    sb.append("    comment: ").append(toIndentedString(comment)).append("\n");
     sb.append("}");
     return sb.toString();
   }

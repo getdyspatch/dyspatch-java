@@ -1,14 +1,10 @@
-# Dyspatch Java Client
+# dyspatch-java
 
-# Introduction  
-The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. 
-## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.   
-- [Java](https://github.com/getdyspatch/dyspatch-java) 
-- [Javascript](https://github.com/getdyspatch/dyspatch-javascript) 
-- [Python](https://github.com/getdyspatch/dyspatch-python) 
-- [C#](https://github.com/getdyspatch/dyspatch-dotnet) 
-- [Go](https://github.com/getdyspatch/dyspatch-golang) 
-- [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+Dyspatch API
+- API version: 2019.10
+  - Build date: 2019-11-19T10:21:29.886-08:00
+
+# Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
 
   For more information, please visit [https://docs.dyspatch.io](https://docs.dyspatch.io)
 
@@ -45,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.dyspatch</groupId>
   <artifactId>dyspatch-java</artifactId>
-  <version>2.0.0</version>
+  <version>3.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -55,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.dyspatch:dyspatch-java:2.0.0"
+compile "io.dyspatch:dyspatch-java:3.0.0"
 ```
 
 ### Others
@@ -68,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dyspatch-java-2.0.0.jar`
+* `target/dyspatch-java-3.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -76,58 +72,77 @@ Then manually install the following JARs:
 Please follow the [installation](#installation) instruction and execute the following Java code:
 
 ```java
+
 import io.dyspatch.client.*;
 import io.dyspatch.client.auth.*;
 import io.dyspatch.client.model.*;
-import io.dyspatch.client.api.LocalizationsApi;
+import io.dyspatch.client.api.DraftsApi;
 
 import java.io.File;
 import java.util.*;
 
-public class LocalizationsApiExample {
+public class DraftsApiExample {
 
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-
+        
         // Configure API key authorization: Bearer
         ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
         Bearer.setApiKey("YOUR API KEY");
-        Bearer.setApiKeyPrefix("Bearer");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //Bearer.setApiKeyPrefix("Token");
 
-        LocalizationsApi apiInstance = new LocalizationsApi();
-        String localizationId = "localizationId_example"; // String | A localization ID
-        String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Required only for visual templates.
+        DraftsApi apiInstance = new DraftsApi();
+        String draftId = "draftId_example"; // String | A draft ID
+        String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Should only be used for visual templates.
         try {
-            LocalizationRead result = apiInstance.localizationsLocalizationIdGet(localizationId, targetLanguage);
+            DraftRead result = apiInstance.draftsDraftIdGet(draftId, targetLanguage);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling LocalizationsApi#localizationsLocalizationIdGet");
+            System.err.println("Exception when calling DraftsApi#draftsDraftIdGet");
             e.printStackTrace();
         }
     }
 }
+
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://api.dyspatch.io/*
+All URIs are relative to *https://api.dyspatch.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DraftsApi* | [**draftsDraftIdGet**](docs/DraftsApi.md#draftsDraftIdGet) | **GET** /drafts/{draftId} | Get Draft by ID
+*DraftsApi* | [**draftsDraftIdLocalizationKeysGet**](docs/DraftsApi.md#draftsDraftIdLocalizationKeysGet) | **GET** /drafts/{draftId}/localizationKeys | Get localization keys
+*DraftsApi* | [**draftsDraftIdLocalizationsGet**](docs/DraftsApi.md#draftsDraftIdLocalizationsGet) | **GET** /drafts/{draftId}/localizations | Get localizations on a draft
+*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdDelete**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdDelete) | **DELETE** /drafts/{draftId}/localizations/{languageId} | Remove a localization
+*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdPut**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdPut) | **PUT** /drafts/{draftId}/localizations/{languageId} | Create or update a localization
+*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdTranslationsPut**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdTranslationsPut) | **PUT** /drafts/{draftId}/localizations/{languageId}/translations | Set translations for language
+*DraftsApi* | [**draftsDraftIdPublishRequestPost**](docs/DraftsApi.md#draftsDraftIdPublishRequestPost) | **POST** /drafts/{draftId}/publishRequest | Submit the draft for approval
+*DraftsApi* | [**draftsGet**](docs/DraftsApi.md#draftsGet) | **GET** /drafts | List Drafts
 *LocalizationsApi* | [**localizationsLocalizationIdGet**](docs/LocalizationsApi.md#localizationsLocalizationIdGet) | **GET** /localizations/{localizationId} | Get Localization Object by ID
 *TemplatesApi* | [**templatesGet**](docs/TemplatesApi.md#templatesGet) | **GET** /templates | List Templates
 *TemplatesApi* | [**templatesTemplateIdGet**](docs/TemplatesApi.md#templatesTemplateIdGet) | **GET** /templates/{templateId} | Get Template by ID
 
+
 ## Documentation for Models
 
  - [APIError](docs/APIError.md)
+ - [Body](docs/Body.md)
+ - [Body1](docs/Body1.md)
  - [CompiledRead](docs/CompiledRead.md)
  - [Cursor](docs/Cursor.md)
+ - [DraftMetaRead](docs/DraftMetaRead.md)
+ - [DraftRead](docs/DraftRead.md)
+ - [DraftsRead](docs/DraftsRead.md)
+ - [LocalizationKeyRead](docs/LocalizationKeyRead.md)
  - [LocalizationMetaRead](docs/LocalizationMetaRead.md)
  - [LocalizationRead](docs/LocalizationRead.md)
  - [TemplateMetaRead](docs/TemplateMetaRead.md)
  - [TemplateRead](docs/TemplateRead.md)
  - [TemplatesRead](docs/TemplatesRead.md)
+
 
 ## Documentation for Authorization
 
@@ -146,3 +161,4 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 ## Author
 
 support@dyspatch.io
+

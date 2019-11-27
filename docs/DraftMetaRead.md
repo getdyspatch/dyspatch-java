@@ -1,17 +1,16 @@
 
-# LocalizationRead
+# DraftMetaRead
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  |  [optional]
-**language** | **String** |  |  [optional]
+**templateId** | **String** |  |  [optional]
+**name** | **String** |  |  [optional]
+**description** | **String** |  |  [optional]
 **url** | **String** |  |  [optional]
-**template** | **String** |  |  [optional]
-**compiled** | [**CompiledRead**](CompiledRead.md) |  |  [optional]
 **createdAt** | **String** |  |  [optional]
 **updatedAt** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
 
 
 
