@@ -25,62 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * LocalizationMetaRead
+ * Body1
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
-public class LocalizationMetaRead {
-  @SerializedName("localization")
-  private String localization = null;
-
-  @SerializedName("language")
-  private String language = null;
-
+public class Body1 {
   @SerializedName("name")
   private String name = null;
 
-  @SerializedName("url")
-  private String url = null;
-
-  @SerializedName("draft")
-  private String draft = null;
-
-  public LocalizationMetaRead localization(String localization) {
-    this.localization = localization;
-    return this;
-  }
-
-   /**
-   * Get localization
-   * @return localization
-  **/
-  @ApiModelProperty(value = "")
-  public String getLocalization() {
-    return localization;
-  }
-
-  public void setLocalization(String localization) {
-    this.localization = localization;
-  }
-
-  public LocalizationMetaRead language(String language) {
-    this.language = language;
-    return this;
-  }
-
-   /**
-   * Get language
-   * @return language
-  **/
-  @ApiModelProperty(value = "")
-  public String getLanguage() {
-    return language;
-  }
-
-  public void setLanguage(String language) {
-    this.language = language;
-  }
-
-  public LocalizationMetaRead name(String name) {
+  public Body1 name(String name) {
     this.name = name;
     return this;
   }
@@ -89,49 +41,13 @@ public class LocalizationMetaRead {
    * Get name
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "English (US)", value = "")
   public String getName() {
     return name;
   }
 
   public void setName(String name) {
     this.name = name;
-  }
-
-  public LocalizationMetaRead url(String url) {
-    this.url = url;
-    return this;
-  }
-
-   /**
-   * Get url
-   * @return url
-  **/
-  @ApiModelProperty(value = "")
-  public String getUrl() {
-    return url;
-  }
-
-  public void setUrl(String url) {
-    this.url = url;
-  }
-
-  public LocalizationMetaRead draft(String draft) {
-    this.draft = draft;
-    return this;
-  }
-
-   /**
-   * Get draft
-   * @return draft
-  **/
-  @ApiModelProperty(value = "")
-  public String getDraft() {
-    return draft;
-  }
-
-  public void setDraft(String draft) {
-    this.draft = draft;
   }
 
 
@@ -143,30 +59,22 @@ public class LocalizationMetaRead {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LocalizationMetaRead localizationMetaRead = (LocalizationMetaRead) o;
-    return Objects.equals(this.localization, localizationMetaRead.localization) &&
-        Objects.equals(this.language, localizationMetaRead.language) &&
-        Objects.equals(this.name, localizationMetaRead.name) &&
-        Objects.equals(this.url, localizationMetaRead.url) &&
-        Objects.equals(this.draft, localizationMetaRead.draft);
+    Body1 body1 = (Body1) o;
+    return Objects.equals(this.name, body1.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(localization, language, name, url, draft);
+    return Objects.hash(name);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LocalizationMetaRead {\n");
+    sb.append("class Body1 {\n");
     
-    sb.append("    localization: ").append(toIndentedString(localization)).append("\n");
-    sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    draft: ").append(toIndentedString(draft)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -1,10 +1,11 @@
 # LocalizationsApi
 
-All URIs are relative to *https://api.dyspatch.io/*
+All URIs are relative to *https://api.dyspatch.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**localizationsLocalizationIdGet**](LocalizationsApi.md#localizationsLocalizationIdGet) | **GET** /localizations/{localizationId} | Get Localization Object by ID
+
 
 <a name="localizationsLocalizationIdGet"></a>
 # **localizationsLocalizationIdGet**
@@ -28,7 +29,8 @@ ApiClient defaultClient = Configuration.getDefaultApiClient();
 // Configure API key authorization: Bearer
 ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
 Bearer.setApiKey("YOUR API KEY");
-Bearer.setApiKeyPrefix("Bearer");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Bearer.setApiKeyPrefix("Token");
 
 LocalizationsApi apiInstance = new LocalizationsApi();
 String localizationId = "localizationId_example"; // String | A localization ID
@@ -47,7 +49,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **localizationId** | **String**| A localization ID |
- **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [optional] [enum: html, jinja, handlebars, ampscript, freemarker, cheetah]
+ **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [enum: html, jinja, handlebars, ampscript, freemarker, cheetah]
 
 ### Return type
 
@@ -60,5 +62,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2019.03+json
+ - **Accept**: application/vnd.dyspatch.2019.10+json
 

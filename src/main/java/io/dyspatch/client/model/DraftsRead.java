@@ -21,7 +21,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.dyspatch.client.model.Cursor;
-import io.dyspatch.client.model.TemplateMetaRead;
+import io.dyspatch.client.model.DraftMetaRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
@@ -29,17 +29,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TemplatesRead
+ * DraftsRead
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
-public class TemplatesRead {
+public class DraftsRead {
   @SerializedName("cursor")
   private Cursor cursor = null;
 
   @SerializedName("data")
-  private List<TemplateMetaRead> data = null;
+  private List<DraftMetaRead> data = null;
 
-  public TemplatesRead cursor(Cursor cursor) {
+  public DraftsRead cursor(Cursor cursor) {
     this.cursor = cursor;
     return this;
   }
@@ -57,29 +57,29 @@ public class TemplatesRead {
     this.cursor = cursor;
   }
 
-  public TemplatesRead data(List<TemplateMetaRead> data) {
+  public DraftsRead data(List<DraftMetaRead> data) {
     this.data = data;
     return this;
   }
 
-  public TemplatesRead addDataItem(TemplateMetaRead dataItem) {
+  public DraftsRead addDataItem(DraftMetaRead dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<TemplateMetaRead>();
+      this.data = new ArrayList<DraftMetaRead>();
     }
     this.data.add(dataItem);
     return this;
   }
 
    /**
-   * A list of template metadata objects
+   * A list of draft metadata objects
    * @return data
   **/
-  @ApiModelProperty(value = "A list of template metadata objects")
-  public List<TemplateMetaRead> getData() {
+  @ApiModelProperty(value = "A list of draft metadata objects")
+  public List<DraftMetaRead> getData() {
     return data;
   }
 
-  public void setData(List<TemplateMetaRead> data) {
+  public void setData(List<DraftMetaRead> data) {
     this.data = data;
   }
 
@@ -92,9 +92,9 @@ public class TemplatesRead {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TemplatesRead templatesRead = (TemplatesRead) o;
-    return Objects.equals(this.cursor, templatesRead.cursor) &&
-        Objects.equals(this.data, templatesRead.data);
+    DraftsRead draftsRead = (DraftsRead) o;
+    return Objects.equals(this.cursor, draftsRead.cursor) &&
+        Objects.equals(this.data, draftsRead.data);
   }
 
   @Override
@@ -106,7 +106,7 @@ public class TemplatesRead {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TemplatesRead {\n");
+    sb.append("class DraftsRead {\n");
     
     sb.append("    cursor: ").append(toIndentedString(cursor)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");

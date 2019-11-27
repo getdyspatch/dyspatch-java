@@ -20,21 +20,20 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.dyspatch.client.model.CompiledRead;
-import io.dyspatch.client.model.LocalizationMetaRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * TemplateRead
+ * DraftMetaRead
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
-public class TemplateRead {
+public class DraftMetaRead {
   @SerializedName("id")
   private String id = null;
+
+  @SerializedName("templateId")
+  private String templateId = null;
 
   @SerializedName("name")
   private String name = null;
@@ -45,19 +44,13 @@ public class TemplateRead {
   @SerializedName("url")
   private String url = null;
 
-  @SerializedName("compiled")
-  private CompiledRead compiled = null;
-
   @SerializedName("createdAt")
   private String createdAt = null;
 
   @SerializedName("updatedAt")
   private String updatedAt = null;
 
-  @SerializedName("localizations")
-  private List<LocalizationMetaRead> localizations = null;
-
-  public TemplateRead id(String id) {
+  public DraftMetaRead id(String id) {
     this.id = id;
     return this;
   }
@@ -75,7 +68,25 @@ public class TemplateRead {
     this.id = id;
   }
 
-  public TemplateRead name(String name) {
+  public DraftMetaRead templateId(String templateId) {
+    this.templateId = templateId;
+    return this;
+  }
+
+   /**
+   * Get templateId
+   * @return templateId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTemplateId() {
+    return templateId;
+  }
+
+  public void setTemplateId(String templateId) {
+    this.templateId = templateId;
+  }
+
+  public DraftMetaRead name(String name) {
     this.name = name;
     return this;
   }
@@ -93,7 +104,7 @@ public class TemplateRead {
     this.name = name;
   }
 
-  public TemplateRead description(String description) {
+  public DraftMetaRead description(String description) {
     this.description = description;
     return this;
   }
@@ -111,7 +122,7 @@ public class TemplateRead {
     this.description = description;
   }
 
-  public TemplateRead url(String url) {
+  public DraftMetaRead url(String url) {
     this.url = url;
     return this;
   }
@@ -129,25 +140,7 @@ public class TemplateRead {
     this.url = url;
   }
 
-  public TemplateRead compiled(CompiledRead compiled) {
-    this.compiled = compiled;
-    return this;
-  }
-
-   /**
-   * Get compiled
-   * @return compiled
-  **/
-  @ApiModelProperty(value = "")
-  public CompiledRead getCompiled() {
-    return compiled;
-  }
-
-  public void setCompiled(CompiledRead compiled) {
-    this.compiled = compiled;
-  }
-
-  public TemplateRead createdAt(String createdAt) {
+  public DraftMetaRead createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -165,7 +158,7 @@ public class TemplateRead {
     this.createdAt = createdAt;
   }
 
-  public TemplateRead updatedAt(String updatedAt) {
+  public DraftMetaRead updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -183,32 +176,6 @@ public class TemplateRead {
     this.updatedAt = updatedAt;
   }
 
-  public TemplateRead localizations(List<LocalizationMetaRead> localizations) {
-    this.localizations = localizations;
-    return this;
-  }
-
-  public TemplateRead addLocalizationsItem(LocalizationMetaRead localizationsItem) {
-    if (this.localizations == null) {
-      this.localizations = new ArrayList<LocalizationMetaRead>();
-    }
-    this.localizations.add(localizationsItem);
-    return this;
-  }
-
-   /**
-   * A list of the Template&#39;s available localizations
-   * @return localizations
-  **/
-  @ApiModelProperty(value = "A list of the Template's available localizations")
-  public List<LocalizationMetaRead> getLocalizations() {
-    return localizations;
-  }
-
-  public void setLocalizations(List<LocalizationMetaRead> localizations) {
-    this.localizations = localizations;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -218,36 +185,34 @@ public class TemplateRead {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TemplateRead templateRead = (TemplateRead) o;
-    return Objects.equals(this.id, templateRead.id) &&
-        Objects.equals(this.name, templateRead.name) &&
-        Objects.equals(this.description, templateRead.description) &&
-        Objects.equals(this.url, templateRead.url) &&
-        Objects.equals(this.compiled, templateRead.compiled) &&
-        Objects.equals(this.createdAt, templateRead.createdAt) &&
-        Objects.equals(this.updatedAt, templateRead.updatedAt) &&
-        Objects.equals(this.localizations, templateRead.localizations);
+    DraftMetaRead draftMetaRead = (DraftMetaRead) o;
+    return Objects.equals(this.id, draftMetaRead.id) &&
+        Objects.equals(this.templateId, draftMetaRead.templateId) &&
+        Objects.equals(this.name, draftMetaRead.name) &&
+        Objects.equals(this.description, draftMetaRead.description) &&
+        Objects.equals(this.url, draftMetaRead.url) &&
+        Objects.equals(this.createdAt, draftMetaRead.createdAt) &&
+        Objects.equals(this.updatedAt, draftMetaRead.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, url, compiled, createdAt, updatedAt, localizations);
+    return Objects.hash(id, templateId, name, description, url, createdAt, updatedAt);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TemplateRead {\n");
+    sb.append("class DraftMetaRead {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    compiled: ").append(toIndentedString(compiled)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
-    sb.append("    localizations: ").append(toIndentedString(localizations)).append("\n");
     sb.append("}");
     return sb.toString();
   }

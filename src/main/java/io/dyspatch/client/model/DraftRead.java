@@ -29,18 +29,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * TemplateRead
+ * DraftRead
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
-public class TemplateRead {
+public class DraftRead {
   @SerializedName("id")
   private String id = null;
 
+  @SerializedName("template")
+  private String template = null;
+
   @SerializedName("name")
   private String name = null;
-
-  @SerializedName("description")
-  private String description = null;
 
   @SerializedName("url")
   private String url = null;
@@ -57,7 +57,7 @@ public class TemplateRead {
   @SerializedName("localizations")
   private List<LocalizationMetaRead> localizations = null;
 
-  public TemplateRead id(String id) {
+  public DraftRead id(String id) {
     this.id = id;
     return this;
   }
@@ -75,7 +75,25 @@ public class TemplateRead {
     this.id = id;
   }
 
-  public TemplateRead name(String name) {
+  public DraftRead template(String template) {
+    this.template = template;
+    return this;
+  }
+
+   /**
+   * Get template
+   * @return template
+  **/
+  @ApiModelProperty(value = "")
+  public String getTemplate() {
+    return template;
+  }
+
+  public void setTemplate(String template) {
+    this.template = template;
+  }
+
+  public DraftRead name(String name) {
     this.name = name;
     return this;
   }
@@ -93,25 +111,7 @@ public class TemplateRead {
     this.name = name;
   }
 
-  public TemplateRead description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public TemplateRead url(String url) {
+  public DraftRead url(String url) {
     this.url = url;
     return this;
   }
@@ -129,7 +129,7 @@ public class TemplateRead {
     this.url = url;
   }
 
-  public TemplateRead compiled(CompiledRead compiled) {
+  public DraftRead compiled(CompiledRead compiled) {
     this.compiled = compiled;
     return this;
   }
@@ -147,7 +147,7 @@ public class TemplateRead {
     this.compiled = compiled;
   }
 
-  public TemplateRead createdAt(String createdAt) {
+  public DraftRead createdAt(String createdAt) {
     this.createdAt = createdAt;
     return this;
   }
@@ -165,7 +165,7 @@ public class TemplateRead {
     this.createdAt = createdAt;
   }
 
-  public TemplateRead updatedAt(String updatedAt) {
+  public DraftRead updatedAt(String updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
@@ -183,12 +183,12 @@ public class TemplateRead {
     this.updatedAt = updatedAt;
   }
 
-  public TemplateRead localizations(List<LocalizationMetaRead> localizations) {
+  public DraftRead localizations(List<LocalizationMetaRead> localizations) {
     this.localizations = localizations;
     return this;
   }
 
-  public TemplateRead addLocalizationsItem(LocalizationMetaRead localizationsItem) {
+  public DraftRead addLocalizationsItem(LocalizationMetaRead localizationsItem) {
     if (this.localizations == null) {
       this.localizations = new ArrayList<LocalizationMetaRead>();
     }
@@ -218,31 +218,31 @@ public class TemplateRead {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TemplateRead templateRead = (TemplateRead) o;
-    return Objects.equals(this.id, templateRead.id) &&
-        Objects.equals(this.name, templateRead.name) &&
-        Objects.equals(this.description, templateRead.description) &&
-        Objects.equals(this.url, templateRead.url) &&
-        Objects.equals(this.compiled, templateRead.compiled) &&
-        Objects.equals(this.createdAt, templateRead.createdAt) &&
-        Objects.equals(this.updatedAt, templateRead.updatedAt) &&
-        Objects.equals(this.localizations, templateRead.localizations);
+    DraftRead draftRead = (DraftRead) o;
+    return Objects.equals(this.id, draftRead.id) &&
+        Objects.equals(this.template, draftRead.template) &&
+        Objects.equals(this.name, draftRead.name) &&
+        Objects.equals(this.url, draftRead.url) &&
+        Objects.equals(this.compiled, draftRead.compiled) &&
+        Objects.equals(this.createdAt, draftRead.createdAt) &&
+        Objects.equals(this.updatedAt, draftRead.updatedAt) &&
+        Objects.equals(this.localizations, draftRead.localizations);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, description, url, compiled, createdAt, updatedAt, localizations);
+    return Objects.hash(id, template, name, url, compiled, createdAt, updatedAt, localizations);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TemplateRead {\n");
+    sb.append("class DraftRead {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    compiled: ").append(toIndentedString(compiled)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
