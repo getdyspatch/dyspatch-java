@@ -47,11 +47,17 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 Add this dependency to your project's POM:
 
 ```xml
+<!-- in the repositories section -->
+<repository>
+  <id>repo</id>
+  <url>https://github.com/getdyspatch/dyspatch-java-mvn/raw/master/releases</url>
+</repository>
+
+<!-- in the dependencies section -->
 <dependency>
   <groupId>io.dyspatch</groupId>
   <artifactId>dyspatch-java</artifactId>
   <version>3.0.0</version>
-  <scope>compile</scope>
 </dependency>
 ```
 
@@ -169,4 +175,3 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 ## Author
 
 support@dyspatch.io
-
