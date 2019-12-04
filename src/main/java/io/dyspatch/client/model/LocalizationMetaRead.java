@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+ * # Introduction  The Dyspatch API is based on the REST paradigm and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for the following languages and web frameworks:  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
  *
  * OpenAPI spec version: 2019.10
  * Contact: support@dyspatch.io
@@ -27,10 +27,10 @@ import java.io.IOException;
 /**
  * LocalizationMetaRead
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:26:06.860-08:00")
 public class LocalizationMetaRead {
-  @SerializedName("localization")
-  private String localization = null;
+  @SerializedName("id")
+  private String id = null;
 
   @SerializedName("language")
   private String language = null;
@@ -44,22 +44,22 @@ public class LocalizationMetaRead {
   @SerializedName("draft")
   private String draft = null;
 
-  public LocalizationMetaRead localization(String localization) {
-    this.localization = localization;
+  public LocalizationMetaRead id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
-   * Get localization
-   * @return localization
+   * An opaque, unique identifier for a localization
+   * @return id
   **/
-  @ApiModelProperty(value = "")
-  public String getLocalization() {
-    return localization;
+  @ApiModelProperty(example = "loc_g3L7Cw6Hp5wUaf395LehwK", value = "An opaque, unique identifier for a localization")
+  public String getId() {
+    return id;
   }
 
-  public void setLocalization(String localization) {
-    this.localization = localization;
+  public void setId(String id) {
+    this.id = id;
   }
 
   public LocalizationMetaRead language(String language) {
@@ -68,10 +68,10 @@ public class LocalizationMetaRead {
   }
 
    /**
-   * Get language
+   * A language identifier comprised of a language and a country identifier.  See [supported languages](https://docs.dyspatch.io/localization/supported_languages/). 
    * @return language
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "en-US", value = "A language identifier comprised of a language and a country identifier.  See [supported languages](https://docs.dyspatch.io/localization/supported_languages/). ")
   public String getLanguage() {
     return language;
   }
@@ -86,10 +86,10 @@ public class LocalizationMetaRead {
   }
 
    /**
-   * Get name
+   * The user-specified name of a localization
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "English (US)", value = "The user-specified name of a localization")
   public String getName() {
     return name;
   }
@@ -104,10 +104,10 @@ public class LocalizationMetaRead {
   }
 
    /**
-   * Get url
+   * The API url for a specific localization
    * @return url
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "/localizations/loc_g3L7Cw6Hp5wUaf395LehwK", value = "The API url for a specific localization")
   public String getUrl() {
     return url;
   }
@@ -122,10 +122,10 @@ public class LocalizationMetaRead {
   }
 
    /**
-   * Get draft
+   * An opaque, unique identifier for a draft
    * @return draft
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "tdft_g3L7Cw6Hp5wU", value = "An opaque, unique identifier for a draft")
   public String getDraft() {
     return draft;
   }
@@ -144,7 +144,7 @@ public class LocalizationMetaRead {
       return false;
     }
     LocalizationMetaRead localizationMetaRead = (LocalizationMetaRead) o;
-    return Objects.equals(this.localization, localizationMetaRead.localization) &&
+    return Objects.equals(this.id, localizationMetaRead.id) &&
         Objects.equals(this.language, localizationMetaRead.language) &&
         Objects.equals(this.name, localizationMetaRead.name) &&
         Objects.equals(this.url, localizationMetaRead.url) &&
@@ -153,7 +153,7 @@ public class LocalizationMetaRead {
 
   @Override
   public int hashCode() {
-    return Objects.hash(localization, language, name, url, draft);
+    return Objects.hash(id, language, name, url, draft);
   }
 
 
@@ -162,7 +162,7 @@ public class LocalizationMetaRead {
     StringBuilder sb = new StringBuilder();
     sb.append("class LocalizationMetaRead {\n");
     
-    sb.append("    localization: ").append(toIndentedString(localization)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    language: ").append(toIndentedString(language)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");

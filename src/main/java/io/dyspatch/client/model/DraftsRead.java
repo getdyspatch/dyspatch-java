@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+ * # Introduction  The Dyspatch API is based on the REST paradigm and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for the following languages and web frameworks:  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
  *
  * OpenAPI spec version: 2019.10
  * Contact: support@dyspatch.io
@@ -20,7 +20,6 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.dyspatch.client.model.Cursor;
 import io.dyspatch.client.model.DraftMetaRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -31,29 +30,29 @@ import java.util.List;
 /**
  * DraftsRead
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:26:06.860-08:00")
 public class DraftsRead {
   @SerializedName("cursor")
-  private Cursor cursor = null;
+  private Object cursor = null;
 
   @SerializedName("data")
   private List<DraftMetaRead> data = null;
 
-  public DraftsRead cursor(Cursor cursor) {
+  public DraftsRead cursor(Object cursor) {
     this.cursor = cursor;
     return this;
   }
 
    /**
-   * Get cursor
+   * Information about paginated results
    * @return cursor
   **/
-  @ApiModelProperty(value = "")
-  public Cursor getCursor() {
+  @ApiModelProperty(value = "Information about paginated results")
+  public Object getCursor() {
     return cursor;
   }
 
-  public void setCursor(Cursor cursor) {
+  public void setCursor(Object cursor) {
     this.cursor = cursor;
   }
 

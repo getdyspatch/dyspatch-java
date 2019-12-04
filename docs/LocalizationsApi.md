@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 Get Localization Object by ID
 
-Returns a specific localization object with a matching ID
+Returns a specific localization object with a matching ID.
 
 ### Example
 ```java

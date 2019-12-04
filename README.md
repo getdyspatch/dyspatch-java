@@ -2,18 +2,16 @@
 
 Dyspatch API
 - API version: 2019.10
-- Build date: 2019-11-19T10:21:29.886-08:00
+  - Build date: 2019-12-04T10:26:06.860-08:00
 
 # Introduction
-The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. 
-We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.  
 
-- [Java](https://github.com/getdyspatch/dyspatch-java) 
-- [Javascript](https://github.com/getdyspatch/dyspatch-javascript) 
-- [Python](https://github.com/getdyspatch/dyspatch-python) 
-- [C#](https://github.com/getdyspatch/dyspatch-dotnet) 
-- [Go](https://github.com/getdyspatch/dyspatch-golang) 
-- [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+The Dyspatch API is based on the REST paradigm and features resource based URLs
+with standard HTTP response codes to indicate errors. We use standard HTTP
+authentication and request verbs and all responses are JSON formatted. See our
+[Implementation
+Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more
+details on how to implement Dyspatch.
 
 For more information, please visit [https://docs.dyspatch.io](https://docs.dyspatch.io)
 
@@ -47,11 +45,17 @@ Refer to the [OSSRH Guide](http://central.sonatype.org/pages/ossrh-guide.html) f
 Add this dependency to your project's POM:
 
 ```xml
+<!-- in the repositories section -->
+<repository>
+  <id>repo</id>
+  <url>https://github.com/getdyspatch/dyspatch-java-mvn/raw/master/releases</url>
+</repository>
+
+<!-- in the dependencies section -->
 <dependency>
   <groupId>io.dyspatch</groupId>
   <artifactId>dyspatch-java</artifactId>
-  <version>3.0.0</version>
-  <scope>compile</scope>
+  <version>3.0.1</version>
 </dependency>
 ```
 
@@ -60,7 +64,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.dyspatch:dyspatch-java:3.0.0"
+compile "io.dyspatch:dyspatch-java:3.0.1"
 ```
 
 ### Others
@@ -73,7 +77,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dyspatch-java-3.0.0.jar`
+* `target/dyspatch-java-3.0.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -97,12 +101,13 @@ public class DraftsApiExample {
         
         // Configure API key authorization: Bearer
         ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-        Bearer.setApiKeyPrefix("Bearer");
         Bearer.setApiKey("YOUR API KEY");
+        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+        //Bearer.setApiKeyPrefix("Token");
 
         DraftsApi apiInstance = new DraftsApi();
         String draftId = "draftId_example"; // String | A draft ID
-        String targetLanguage = "handlebars"; // String | The type of templating language to compile as. Should only be used for visual templates.
+        String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Should only be used for visual templates.
         try {
             DraftRead result = apiInstance.draftsDraftIdGet(draftId, targetLanguage);
             System.out.println(result);
@@ -122,12 +127,12 @@ All URIs are relative to *https://api.dyspatch.io*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DraftsApi* | [**draftsDraftIdGet**](docs/DraftsApi.md#draftsDraftIdGet) | **GET** /drafts/{draftId} | Get Draft by ID
-*DraftsApi* | [**draftsDraftIdLocalizationKeysGet**](docs/DraftsApi.md#draftsDraftIdLocalizationKeysGet) | **GET** /drafts/{draftId}/localizationKeys | Get localization keys
-*DraftsApi* | [**draftsDraftIdLocalizationsGet**](docs/DraftsApi.md#draftsDraftIdLocalizationsGet) | **GET** /drafts/{draftId}/localizations | Get localizations on a draft
-*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdDelete**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdDelete) | **DELETE** /drafts/{draftId}/localizations/{languageId} | Remove a localization
-*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdPut**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdPut) | **PUT** /drafts/{draftId}/localizations/{languageId} | Create or update a localization
-*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdTranslationsPut**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdTranslationsPut) | **PUT** /drafts/{draftId}/localizations/{languageId}/translations | Set translations for language
-*DraftsApi* | [**draftsDraftIdPublishRequestPost**](docs/DraftsApi.md#draftsDraftIdPublishRequestPost) | **POST** /drafts/{draftId}/publishRequest | Submit the draft for approval
+*DraftsApi* | [**draftsDraftIdLocalizationKeysGet**](docs/DraftsApi.md#draftsDraftIdLocalizationKeysGet) | **GET** /drafts/{draftId}/localizationKeys | Get Localization Keys
+*DraftsApi* | [**draftsDraftIdLocalizationsGet**](docs/DraftsApi.md#draftsDraftIdLocalizationsGet) | **GET** /drafts/{draftId}/localizations | Get Localizations on a Draft
+*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdDelete**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdDelete) | **DELETE** /drafts/{draftId}/localizations/{languageId} | Remove a Localization
+*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdPut**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdPut) | **PUT** /drafts/{draftId}/localizations/{languageId} | Create or Update a Localization
+*DraftsApi* | [**draftsDraftIdLocalizationsLanguageIdTranslationsPut**](docs/DraftsApi.md#draftsDraftIdLocalizationsLanguageIdTranslationsPut) | **PUT** /drafts/{draftId}/localizations/{languageId}/translations | Set Translations for Language
+*DraftsApi* | [**draftsDraftIdPublishRequestPost**](docs/DraftsApi.md#draftsDraftIdPublishRequestPost) | **POST** /drafts/{draftId}/publishRequest | Submit the Draft for Approval
 *DraftsApi* | [**draftsGet**](docs/DraftsApi.md#draftsGet) | **GET** /drafts | List Drafts
 *LocalizationsApi* | [**localizationsLocalizationIdGet**](docs/LocalizationsApi.md#localizationsLocalizationIdGet) | **GET** /localizations/{localizationId} | Get Localization Object by ID
 *TemplatesApi* | [**templatesGet**](docs/TemplatesApi.md#templatesGet) | **GET** /templates | List Templates
@@ -138,7 +143,6 @@ Class | Method | HTTP request | Description
 
  - [APIError](docs/APIError.md)
  - [Body](docs/Body.md)
- - [Body1](docs/Body1.md)
  - [CompiledRead](docs/CompiledRead.md)
  - [Cursor](docs/Cursor.md)
  - [DraftMetaRead](docs/DraftMetaRead.md)
