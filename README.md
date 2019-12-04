@@ -102,8 +102,7 @@ public class DraftsApiExample {
         // Configure API key authorization: Bearer
         ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
         Bearer.setApiKey("YOUR API KEY");
-        // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-        //Bearer.setApiKeyPrefix("Token");
+        Bearer.setApiKeyPrefix("Bearer");
 
         DraftsApi apiInstance = new DraftsApi();
         String draftId = "draftId_example"; // String | A draft ID
