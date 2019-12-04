@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * LocalizationKeyRead
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:26:06.860-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:55:38.642-08:00")
 public class LocalizationKeyRead {
   @SerializedName("key")
   private String key = null;
