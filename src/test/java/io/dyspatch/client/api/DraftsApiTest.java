@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+ * # Introduction  The Dyspatch API is based on the REST paradigm and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for the following languages and web frameworks:  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
  *
  * OpenAPI spec version: 2019.10
  * Contact: support@dyspatch.io
@@ -16,7 +16,6 @@ package io.dyspatch.client.api;
 import io.dyspatch.client.ApiException;
 import io.dyspatch.client.model.APIError;
 import io.dyspatch.client.model.Body;
-import io.dyspatch.client.model.Body1;
 import io.dyspatch.client.model.DraftRead;
 import io.dyspatch.client.model.DraftsRead;
 import io.dyspatch.client.model.LocalizationKeyRead;
@@ -41,7 +40,7 @@ public class DraftsApiTest {
     /**
      * Get Draft by ID
      *
-     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the template in the default, unlocalized form.
+     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the unlocalized default template object.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -56,7 +55,7 @@ public class DraftsApiTest {
     }
     
     /**
-     * Get localization keys
+     * Get Localization Keys
      *
      * Returns the list of values that need to be translated for the draft. Set the &#x60;Accept&#x60; header to &#x60;application/vnd.dyspatch.2019.10+json&#x60; to get a JSON object, or &#x60;text/vnd.dyspatch.2019.10+x-gettext-translation&#x60; to get the POT file.
      *
@@ -73,9 +72,9 @@ public class DraftsApiTest {
     }
     
     /**
-     * Get localizations on a draft
+     * Get Localizations on a Draft
      *
-     * Returns localization metadata for the draft
+     * Returns localization metadata object for a template draft.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -89,9 +88,9 @@ public class DraftsApiTest {
     }
     
     /**
-     * Remove a localization
+     * Remove a Localization
      *
-     * Deletes the localization with the given language ID if it exists
+     * Deletes the localization with the given &#x60;languageId&#x60; if it exists.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -106,9 +105,9 @@ public class DraftsApiTest {
     }
     
     /**
-     * Create or update a localization
+     * Create or Update a Localization
      *
-     * Inserts a localization or sets the name on an existing localization that already uses the languageId
+     * Inserts a localization or sets the name on an existing localization that already uses the &#x60;languageId&#x60;.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -124,7 +123,7 @@ public class DraftsApiTest {
     }
     
     /**
-     * Set translations for language
+     * Set Translations for Language
      *
      * Completely replaces any existing translations for the given language with those provided in request body. Variables embedded in keys or values are expected to be in the format &#x60;%(my_variable)s&#x60; and will automatically convert to the correct Dyspatch format depending on the type of template. Accepts key/value pairs in JSON format or in gettext PO file format. For JSON set &#x60;Content-Type&#x60; header to &#x60;application/json&#x60;. For gettext PO format set &#x60;Content-Type&#x60; header to &#x60;text/x-gettext-translation&#x60;.
      *
@@ -135,16 +134,16 @@ public class DraftsApiTest {
     public void draftsDraftIdLocalizationsLanguageIdTranslationsPutTest() throws ApiException {
         String draftId = null;
         String languageId = null;
-        Body1 body = null;
+        Object body = null;
         api.draftsDraftIdLocalizationsLanguageIdTranslationsPut(draftId, languageId, body);
 
         // TODO: test validations
     }
     
     /**
-     * Submit the draft for approval
+     * Submit the Draft for Approval
      *
-     * Moves the draft into submitted state.
+     * Moves the draft into [submitted and locked state](https://docs.dyspatch.io/templates/submitting_a_template/#awaiting-approval). This will allow your email stakeholders to review the template draft and provide feedback.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -160,15 +159,16 @@ public class DraftsApiTest {
     /**
      * List Drafts
      *
-     * Returns all drafts for your organization.
+     * Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
     public void draftsGetTest() throws ApiException {
+        String cursor = null;
         String status = null;
-        DraftsRead response = api.draftsGet(status);
+        DraftsRead response = api.draftsGet(cursor, status);
 
         // TODO: test validations
     }

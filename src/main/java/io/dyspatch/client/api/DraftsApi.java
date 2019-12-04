@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+ * # Introduction  The Dyspatch API is based on the REST paradigm and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for the following languages and web frameworks:  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
  *
  * OpenAPI spec version: 2019.10
  * Contact: support@dyspatch.io
@@ -29,7 +29,6 @@ import java.io.IOException;
 
 import io.dyspatch.client.model.APIError;
 import io.dyspatch.client.model.Body;
-import io.dyspatch.client.model.Body1;
 import io.dyspatch.client.model.DraftRead;
 import io.dyspatch.client.model.DraftsRead;
 import io.dyspatch.client.model.LocalizationKeyRead;
@@ -134,7 +133,7 @@ public class DraftsApi {
 
     /**
      * Get Draft by ID
-     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the template in the default, unlocalized form.
+     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the unlocalized default template object.
      * @param draftId A draft ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (required)
      * @return DraftRead
@@ -147,7 +146,7 @@ public class DraftsApi {
 
     /**
      * Get Draft by ID
-     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the template in the default, unlocalized form.
+     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the unlocalized default template object.
      * @param draftId A draft ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (required)
      * @return ApiResponse&lt;DraftRead&gt;
@@ -161,7 +160,7 @@ public class DraftsApi {
 
     /**
      * Get Draft by ID (asynchronously)
-     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the template in the default, unlocalized form.
+     * Gets a draft object with the matching ID. The \&quot;compiled\&quot; field will contain the unlocalized default template object.
      * @param draftId A draft ID (required)
      * @param targetLanguage The type of templating language to compile as. Should only be used for visual templates. (required)
      * @param callback The callback to be executed when the API call finishes
@@ -197,7 +196,7 @@ public class DraftsApi {
     /**
      * Build call for draftsDraftIdLocalizationKeysGet
      * @param draftId A draft ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot;. (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
@@ -223,7 +222,7 @@ public class DraftsApi {
             "application/vnd.dyspatch.2019.10+json", "text/vnd.dyspatch.2019.10+x-gettext-translation"
         };
         final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (accept != null) localVarHeaderParams.put("Accept", localVarAccept);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
             
@@ -262,10 +261,10 @@ public class DraftsApi {
     }
 
     /**
-     * Get localization keys
+     * Get Localization Keys
      * Returns the list of values that need to be translated for the draft. Set the &#x60;Accept&#x60; header to &#x60;application/vnd.dyspatch.2019.10+json&#x60; to get a JSON object, or &#x60;text/vnd.dyspatch.2019.10+x-gettext-translation&#x60; to get the POT file.
      * @param draftId A draft ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot;. (optional)
      * @return List&lt;LocalizationKeyRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -275,10 +274,10 @@ public class DraftsApi {
     }
 
     /**
-     * Get localization keys
+     * Get Localization Keys
      * Returns the list of values that need to be translated for the draft. Set the &#x60;Accept&#x60; header to &#x60;application/vnd.dyspatch.2019.10+json&#x60; to get a JSON object, or &#x60;text/vnd.dyspatch.2019.10+x-gettext-translation&#x60; to get the POT file.
      * @param draftId A draft ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot;. (optional)
      * @return ApiResponse&lt;List&lt;LocalizationKeyRead&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -289,10 +288,10 @@ public class DraftsApi {
     }
 
     /**
-     * Get localization keys (asynchronously)
+     * Get Localization Keys (asynchronously)
      * Returns the list of values that need to be translated for the draft. Set the &#x60;Accept&#x60; header to &#x60;application/vnd.dyspatch.2019.10+json&#x60; to get a JSON object, or &#x60;text/vnd.dyspatch.2019.10+x-gettext-translation&#x60; to get the POT file.
      * @param draftId A draft ID (required)
-     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; (optional)
+     * @param accept A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot;. (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -388,8 +387,8 @@ public class DraftsApi {
     }
 
     /**
-     * Get localizations on a draft
-     * Returns localization metadata for the draft
+     * Get Localizations on a Draft
+     * Returns localization metadata object for a template draft.
      * @param draftId A draft ID (required)
      * @return List&lt;LocalizationMetaRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -400,8 +399,8 @@ public class DraftsApi {
     }
 
     /**
-     * Get localizations on a draft
-     * Returns localization metadata for the draft
+     * Get Localizations on a Draft
+     * Returns localization metadata object for a template draft.
      * @param draftId A draft ID (required)
      * @return ApiResponse&lt;List&lt;LocalizationMetaRead&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -413,8 +412,8 @@ public class DraftsApi {
     }
 
     /**
-     * Get localizations on a draft (asynchronously)
-     * Returns localization metadata for the draft
+     * Get Localizations on a Draft (asynchronously)
+     * Returns localization metadata object for a template draft.
      * @param draftId A draft ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -518,8 +517,8 @@ public class DraftsApi {
     }
 
     /**
-     * Remove a localization
-     * Deletes the localization with the given language ID if it exists
+     * Remove a Localization
+     * Deletes the localization with the given &#x60;languageId&#x60; if it exists.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -529,8 +528,8 @@ public class DraftsApi {
     }
 
     /**
-     * Remove a localization
-     * Deletes the localization with the given language ID if it exists
+     * Remove a Localization
+     * Deletes the localization with the given &#x60;languageId&#x60; if it exists.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
      * @return ApiResponse&lt;Void&gt;
@@ -542,8 +541,8 @@ public class DraftsApi {
     }
 
     /**
-     * Remove a localization (asynchronously)
-     * Deletes the localization with the given language ID if it exists
+     * Remove a Localization (asynchronously)
+     * Deletes the localization with the given &#x60;languageId&#x60; if it exists.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
      * @param callback The callback to be executed when the API call finishes
@@ -653,8 +652,8 @@ public class DraftsApi {
     }
 
     /**
-     * Create or update a localization
-     * Inserts a localization or sets the name on an existing localization that already uses the languageId
+     * Create or Update a Localization
+     * Inserts a localization or sets the name on an existing localization that already uses the &#x60;languageId&#x60;.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
      * @param body  (required)
@@ -665,8 +664,8 @@ public class DraftsApi {
     }
 
     /**
-     * Create or update a localization
-     * Inserts a localization or sets the name on an existing localization that already uses the languageId
+     * Create or Update a Localization
+     * Inserts a localization or sets the name on an existing localization that already uses the &#x60;languageId&#x60;.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
      * @param body  (required)
@@ -679,8 +678,8 @@ public class DraftsApi {
     }
 
     /**
-     * Create or update a localization (asynchronously)
-     * Inserts a localization or sets the name on an existing localization that already uses the languageId
+     * Create or Update a Localization (asynchronously)
+     * Inserts a localization or sets the name on an existing localization that already uses the &#x60;languageId&#x60;.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
      * @param body  (required)
@@ -723,7 +722,7 @@ public class DraftsApi {
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call draftsDraftIdLocalizationsLanguageIdTranslationsPutCall(String draftId, String languageId, Body1 body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call draftsDraftIdLocalizationsLanguageIdTranslationsPutCall(String draftId, String languageId, Object body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -767,7 +766,7 @@ public class DraftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call draftsDraftIdLocalizationsLanguageIdTranslationsPutValidateBeforeCall(String draftId, String languageId, Body1 body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call draftsDraftIdLocalizationsLanguageIdTranslationsPutValidateBeforeCall(String draftId, String languageId, Object body, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         // verify the required parameter 'draftId' is set
         if (draftId == null) {
@@ -791,19 +790,19 @@ public class DraftsApi {
     }
 
     /**
-     * Set translations for language
+     * Set Translations for Language
      * Completely replaces any existing translations for the given language with those provided in request body. Variables embedded in keys or values are expected to be in the format &#x60;%(my_variable)s&#x60; and will automatically convert to the correct Dyspatch format depending on the type of template. Accepts key/value pairs in JSON format or in gettext PO file format. For JSON set &#x60;Content-Type&#x60; header to &#x60;application/json&#x60;. For gettext PO format set &#x60;Content-Type&#x60; header to &#x60;text/x-gettext-translation&#x60;.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
      * @param body  (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public void draftsDraftIdLocalizationsLanguageIdTranslationsPut(String draftId, String languageId, Body1 body) throws ApiException {
+    public void draftsDraftIdLocalizationsLanguageIdTranslationsPut(String draftId, String languageId, Object body) throws ApiException {
         draftsDraftIdLocalizationsLanguageIdTranslationsPutWithHttpInfo(draftId, languageId, body);
     }
 
     /**
-     * Set translations for language
+     * Set Translations for Language
      * Completely replaces any existing translations for the given language with those provided in request body. Variables embedded in keys or values are expected to be in the format &#x60;%(my_variable)s&#x60; and will automatically convert to the correct Dyspatch format depending on the type of template. Accepts key/value pairs in JSON format or in gettext PO file format. For JSON set &#x60;Content-Type&#x60; header to &#x60;application/json&#x60;. For gettext PO format set &#x60;Content-Type&#x60; header to &#x60;text/x-gettext-translation&#x60;.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
@@ -811,13 +810,13 @@ public class DraftsApi {
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Void> draftsDraftIdLocalizationsLanguageIdTranslationsPutWithHttpInfo(String draftId, String languageId, Body1 body) throws ApiException {
+    public ApiResponse<Void> draftsDraftIdLocalizationsLanguageIdTranslationsPutWithHttpInfo(String draftId, String languageId, Object body) throws ApiException {
         com.squareup.okhttp.Call call = draftsDraftIdLocalizationsLanguageIdTranslationsPutValidateBeforeCall(draftId, languageId, body, null, null);
         return apiClient.execute(call);
     }
 
     /**
-     * Set translations for language (asynchronously)
+     * Set Translations for Language (asynchronously)
      * Completely replaces any existing translations for the given language with those provided in request body. Variables embedded in keys or values are expected to be in the format &#x60;%(my_variable)s&#x60; and will automatically convert to the correct Dyspatch format depending on the type of template. Accepts key/value pairs in JSON format or in gettext PO file format. For JSON set &#x60;Content-Type&#x60; header to &#x60;application/json&#x60;. For gettext PO format set &#x60;Content-Type&#x60; header to &#x60;text/x-gettext-translation&#x60;.
      * @param draftId A draft ID (required)
      * @param languageId A language ID (eg: en-US) (required)
@@ -826,7 +825,7 @@ public class DraftsApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call draftsDraftIdLocalizationsLanguageIdTranslationsPutAsync(String draftId, String languageId, Body1 body, final ApiCallback<Void> callback) throws ApiException {
+    public com.squareup.okhttp.Call draftsDraftIdLocalizationsLanguageIdTranslationsPutAsync(String draftId, String languageId, Object body, final ApiCallback<Void> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -916,8 +915,8 @@ public class DraftsApi {
     }
 
     /**
-     * Submit the draft for approval
-     * Moves the draft into submitted state.
+     * Submit the Draft for Approval
+     * Moves the draft into [submitted and locked state](https://docs.dyspatch.io/templates/submitting_a_template/#awaiting-approval). This will allow your email stakeholders to review the template draft and provide feedback.
      * @param draftId A draft ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
@@ -926,8 +925,8 @@ public class DraftsApi {
     }
 
     /**
-     * Submit the draft for approval
-     * Moves the draft into submitted state.
+     * Submit the Draft for Approval
+     * Moves the draft into [submitted and locked state](https://docs.dyspatch.io/templates/submitting_a_template/#awaiting-approval). This will allow your email stakeholders to review the template draft and provide feedback.
      * @param draftId A draft ID (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -938,8 +937,8 @@ public class DraftsApi {
     }
 
     /**
-     * Submit the draft for approval (asynchronously)
-     * Moves the draft into submitted state.
+     * Submit the Draft for Approval (asynchronously)
+     * Moves the draft into [submitted and locked state](https://docs.dyspatch.io/templates/submitting_a_template/#awaiting-approval). This will allow your email stakeholders to review the template draft and provide feedback.
      * @param draftId A draft ID (required)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
@@ -972,13 +971,14 @@ public class DraftsApi {
     }
     /**
      * Build call for draftsGet
+     * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @param status Filter the list of drafts by a particular status (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call draftsGetCall(String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    public com.squareup.okhttp.Call draftsGetCall(String cursor, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -986,6 +986,8 @@ public class DraftsApi {
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (cursor != null)
+        localVarQueryParams.addAll(apiClient.parameterToPair("cursor", cursor));
         if (status != null)
         localVarQueryParams.addAll(apiClient.parameterToPair("status", status));
 
@@ -1022,48 +1024,51 @@ public class DraftsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call draftsGetValidateBeforeCall(String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call draftsGetValidateBeforeCall(String cursor, String status, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = draftsGetCall(status, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = draftsGetCall(cursor, status, progressListener, progressRequestListener);
         return call;
 
     }
 
     /**
      * List Drafts
-     * Returns all drafts for your organization.
+     * Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
+     * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @param status Filter the list of drafts by a particular status (optional)
      * @return DraftsRead
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DraftsRead draftsGet(String status) throws ApiException {
-        ApiResponse<DraftsRead> resp = draftsGetWithHttpInfo(status);
+    public DraftsRead draftsGet(String cursor, String status) throws ApiException {
+        ApiResponse<DraftsRead> resp = draftsGetWithHttpInfo(cursor, status);
         return resp.getData();
     }
 
     /**
      * List Drafts
-     * Returns all drafts for your organization.
+     * Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
+     * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @param status Filter the list of drafts by a particular status (optional)
      * @return ApiResponse&lt;DraftsRead&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DraftsRead> draftsGetWithHttpInfo(String status) throws ApiException {
-        com.squareup.okhttp.Call call = draftsGetValidateBeforeCall(status, null, null);
+    public ApiResponse<DraftsRead> draftsGetWithHttpInfo(String cursor, String status) throws ApiException {
+        com.squareup.okhttp.Call call = draftsGetValidateBeforeCall(cursor, status, null, null);
         Type localVarReturnType = new TypeToken<DraftsRead>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
      * List Drafts (asynchronously)
-     * Returns all drafts for your organization.
+     * Gets a list of all drafts for your oranization. Up to 25 results returned before results are paginated.
+     * @param cursor A cursor value used to retrieve a specific page from a paginated result set. (optional)
      * @param status Filter the list of drafts by a particular status (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call draftsGetAsync(String status, final ApiCallback<DraftsRead> callback) throws ApiException {
+    public com.squareup.okhttp.Call draftsGetAsync(String cursor, String status, final ApiCallback<DraftsRead> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1084,7 +1089,7 @@ public class DraftsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = draftsGetValidateBeforeCall(status, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = draftsGetValidateBeforeCall(cursor, status, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DraftsRead>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

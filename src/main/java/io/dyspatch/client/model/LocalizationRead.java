@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+ * # Introduction  The Dyspatch API is based on the REST paradigm and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries  Dyspatch provides API Clients for the following languages and web frameworks:  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
  *
  * OpenAPI spec version: 2019.10
  * Contact: support@dyspatch.io
@@ -24,11 +24,12 @@ import io.dyspatch.client.model.CompiledRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.threeten.bp.OffsetDateTime;
 
 /**
  * LocalizationRead
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-11-19T13:00:30.393-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:55:38.642-08:00")
 public class LocalizationRead {
   @SerializedName("id")
   private String id = null;
@@ -46,10 +47,10 @@ public class LocalizationRead {
   private CompiledRead compiled = null;
 
   @SerializedName("createdAt")
-  private String createdAt = null;
+  private OffsetDateTime createdAt = null;
 
   @SerializedName("updatedAt")
-  private String updatedAt = null;
+  private OffsetDateTime updatedAt = null;
 
   @SerializedName("name")
   private String name = null;
@@ -60,10 +61,10 @@ public class LocalizationRead {
   }
 
    /**
-   * Get id
+   * An opaque, unique identifier for a localization
    * @return id
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "loc_g3L7Cw6Hp5wUaf395LehwK", value = "An opaque, unique identifier for a localization")
   public String getId() {
     return id;
   }
@@ -78,10 +79,10 @@ public class LocalizationRead {
   }
 
    /**
-   * Get language
+   * A language identifier comprised of a language and a country identifier.  See [supported languages](https://docs.dyspatch.io/localization/supported_languages/). 
    * @return language
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "en-US", value = "A language identifier comprised of a language and a country identifier.  See [supported languages](https://docs.dyspatch.io/localization/supported_languages/). ")
   public String getLanguage() {
     return language;
   }
@@ -96,10 +97,10 @@ public class LocalizationRead {
   }
 
    /**
-   * Get url
+   * The API url for a specific localization
    * @return url
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "/localizations/loc_g3L7Cw6Hp5wUaf395LehwK", value = "The API url for a specific localization")
   public String getUrl() {
     return url;
   }
@@ -114,10 +115,10 @@ public class LocalizationRead {
   }
 
    /**
-   * Get template
+   * An opaque, unique identifier for a template
    * @return template
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "tem_g3L7Cw6Hp5wU", value = "An opaque, unique identifier for a template")
   public String getTemplate() {
     return template;
   }
@@ -144,39 +145,39 @@ public class LocalizationRead {
     this.compiled = compiled;
   }
 
-  public LocalizationRead createdAt(String createdAt) {
+  public LocalizationRead createdAt(OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
    /**
-   * Get createdAt
+   * The time of initial creation
    * @return createdAt
   **/
-  @ApiModelProperty(value = "")
-  public String getCreatedAt() {
+  @ApiModelProperty(value = "The time of initial creation")
+  public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(String createdAt) {
+  public void setCreatedAt(OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
-  public LocalizationRead updatedAt(String updatedAt) {
+  public LocalizationRead updatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
    /**
-   * Get updatedAt
+   * The time of last update
    * @return updatedAt
   **/
-  @ApiModelProperty(value = "")
-  public String getUpdatedAt() {
+  @ApiModelProperty(value = "The time of last update")
+  public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(String updatedAt) {
+  public void setUpdatedAt(OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
@@ -186,10 +187,10 @@ public class LocalizationRead {
   }
 
    /**
-   * Get name
+   * The user-specified name of a localization
    * @return name
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "English (US)", value = "The user-specified name of a localization")
   public String getName() {
     return name;
   }
