@@ -31,7 +31,7 @@ import java.util.List;
 /**
  * TemplatesRead
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:55:38.642-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T17:48:43.587-08:00")
 public class TemplatesRead {
   @SerializedName("cursor")
   private Cursor cursor = null;

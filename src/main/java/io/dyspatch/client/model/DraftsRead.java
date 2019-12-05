@@ -20,6 +20,7 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import io.dyspatch.client.model.Cursor;
 import io.dyspatch.client.model.DraftMetaRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -30,29 +31,29 @@ import java.util.List;
 /**
  * DraftsRead
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:55:38.642-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T17:48:43.587-08:00")
 public class DraftsRead {
   @SerializedName("cursor")
-  private Object cursor = null;
+  private Cursor cursor = null;
 
   @SerializedName("data")
   private List<DraftMetaRead> data = null;
 
-  public DraftsRead cursor(Object cursor) {
+  public DraftsRead cursor(Cursor cursor) {
     this.cursor = cursor;
     return this;
   }
 
    /**
-   * Information about paginated results
+   * Get cursor
    * @return cursor
   **/
-  @ApiModelProperty(value = "Information about paginated results")
-  public Object getCursor() {
+  @ApiModelProperty(value = "")
+  public Cursor getCursor() {
     return cursor;
   }
 
-  public void setCursor(Object cursor) {
+  public void setCursor(Cursor cursor) {
     this.cursor = cursor;
   }
 
