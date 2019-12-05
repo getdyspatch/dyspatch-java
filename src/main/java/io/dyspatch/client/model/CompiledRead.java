@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CompiledRead
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T10:55:38.642-08:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-12-04T17:48:43.587-08:00")
 public class CompiledRead {
   @SerializedName("sender")
   private String sender = null;
