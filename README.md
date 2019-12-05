@@ -2,7 +2,7 @@
 
 Dyspatch API
 - API version: 2019.10
-  - Build date: 2019-12-04T10:26:06.860-08:00
+  - Build date: 2019-12-04T17:48:43.587-08:00
 
 # Introduction
 
@@ -55,7 +55,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.dyspatch</groupId>
   <artifactId>dyspatch-java</artifactId>
-  <version>3.0.1</version>
+  <version>3.0.2</version>
 </dependency>
 ```
 
@@ -64,7 +64,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.dyspatch:dyspatch-java:3.0.1"
+compile "io.dyspatch:dyspatch-java:3.0.2"
 ```
 
 ### Others
@@ -77,7 +77,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dyspatch-java-3.0.1.jar`
+* `target/dyspatch-java-3.0.2.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
