@@ -1,4 +1,4 @@
-# dyspatch-java
+# Dyspatch Java API client
 
 Dyspatch API
 - API version: 2019.10
