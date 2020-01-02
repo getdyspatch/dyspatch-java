@@ -22,8 +22,8 @@ public class IntegrationTest {
 
     public IntegrationTest() {
         client = Configuration.getDefaultApiClient();
-        ApiKeyAuth auth = (ApiKeyAuth) client.getAuthentication("Bearer");
-        auth.setApiKey(System.getenv("DYSPATCH_API_KEY"));
+        client.setApiKey(System.getenv("DYSPATCH_API_KEY"));
+        client.setApiKeyPrefix("Bearer");
 
         templates = new TemplatesApi(client);
         drafts = new DraftsApi(client);

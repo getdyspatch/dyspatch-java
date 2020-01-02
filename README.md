@@ -94,15 +94,14 @@ public class Example {
     defaultClient.setBasePath("https://api.dyspatch.io");
 
     // Configure API key authorization: Bearer
-    ApiKeyAuth Bearer = (ApiKeyAuth) defaultClient.getAuthentication("Bearer");
-    Bearer.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //Bearer.setApiKeyPrefix("Token");
+    defaultClient.setApiKey(System.getenv("DYSPATCH_API_KEY"));
+    defaultClient.setApiKeyPrefix("Bearer");
 
+    // Initialize your API objects:
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
     String languageId = "languageId_example"; // String | A language ID (eg: en-US)
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "application/vnd.dyspatch.2019.10+json";
     try {
       apiInstance.deleteLocalization(draftId, languageId, accept);
     } catch (ApiException e) {
