@@ -11,44 +11,57 @@
  */
 
 
-package io.dyspatch.client.api;
+package io.dyspatch.client.model;
 
-import io.dyspatch.client.ApiException;
-import io.dyspatch.client.model.APIError;
-import io.dyspatch.client.model.LocalizationRead;
-import org.junit.Test;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import org.junit.Assert;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
- * API tests for LocalizationsApi
+ * Model tests for APIError
  */
-@Ignore
-public class LocalizationsApiTest {
+public class APIErrorTest {
+    private final APIError model = new APIError();
 
-    private final LocalizationsApi api = new LocalizationsApi();
-
-    
     /**
-     * Get Localization Object by ID
-     *
-     * Returns a specific localization object with a matching ID
-     *
-     * @throws ApiException
-     *          if the Api call fails
+     * Model tests for APIError
      */
     @Test
-    public void getLocalizationByIdTest() throws ApiException {
-        String localizationId = null;
-        String targetLanguage = null;
-        String accept = null;
-        LocalizationRead response = api.getLocalizationById(localizationId, targetLanguage, accept);
-
-        // TODO: test validations
+    public void testAPIError() {
+        // TODO: test APIError
     }
-    
+
+    /**
+     * Test the property 'code'
+     */
+    @Test
+    public void codeTest() {
+        // TODO: test code
+    }
+
+    /**
+     * Test the property 'message'
+     */
+    @Test
+    public void messageTest() {
+        // TODO: test message
+    }
+
+    /**
+     * Test the property 'parameter'
+     */
+    @Test
+    public void parameterTest() {
+        // TODO: test parameter
+    }
+
 }

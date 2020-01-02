@@ -11,44 +11,53 @@
  */
 
 
-package io.dyspatch.client.api;
+package io.dyspatch.client.model;
 
-import io.dyspatch.client.ApiException;
-import io.dyspatch.client.model.APIError;
-import io.dyspatch.client.model.LocalizationRead;
-import org.junit.Test;
-import org.junit.Ignore;
-
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.dyspatch.client.model.Cursor;
+import io.dyspatch.client.model.TemplateMetaRead;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 
 /**
- * API tests for LocalizationsApi
+ * Model tests for TemplatesRead
  */
-@Ignore
-public class LocalizationsApiTest {
+public class TemplatesReadTest {
+    private final TemplatesRead model = new TemplatesRead();
 
-    private final LocalizationsApi api = new LocalizationsApi();
-
-    
     /**
-     * Get Localization Object by ID
-     *
-     * Returns a specific localization object with a matching ID
-     *
-     * @throws ApiException
-     *          if the Api call fails
+     * Model tests for TemplatesRead
      */
     @Test
-    public void getLocalizationByIdTest() throws ApiException {
-        String localizationId = null;
-        String targetLanguage = null;
-        String accept = null;
-        LocalizationRead response = api.getLocalizationById(localizationId, targetLanguage, accept);
-
-        // TODO: test validations
+    public void testTemplatesRead() {
+        // TODO: test TemplatesRead
     }
-    
+
+    /**
+     * Test the property 'cursor'
+     */
+    @Test
+    public void cursorTest() {
+        // TODO: test cursor
+    }
+
+    /**
+     * Test the property 'data'
+     */
+    @Test
+    public void dataTest() {
+        // TODO: test data
+    }
+
 }

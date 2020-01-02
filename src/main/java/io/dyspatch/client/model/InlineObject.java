@@ -20,80 +20,40 @@ import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-import io.dyspatch.client.model.Cursor;
-import io.dyspatch.client.model.TemplateMetaRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * list of template metadata
+ * InlineObject
  */
-@ApiModel(description = "list of template metadata")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-02T21:31:14.752Z[GMT]")
-public class TemplatesRead {
-  public static final String SERIALIZED_NAME_CURSOR = "cursor";
-  @SerializedName(SERIALIZED_NAME_CURSOR)
-  private Cursor cursor;
-
-  public static final String SERIALIZED_NAME_DATA = "data";
-  @SerializedName(SERIALIZED_NAME_DATA)
-  private List<TemplateMetaRead> data = null;
+public class InlineObject {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name;
 
 
-  public TemplatesRead cursor(Cursor cursor) {
+  public InlineObject name(String name) {
     
-    this.cursor = cursor;
+    this.name = name;
     return this;
   }
 
    /**
-   * Get cursor
-   * @return cursor
+   * Get name
+   * @return name
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(example = "English (US)", value = "")
 
-  public Cursor getCursor() {
-    return cursor;
+  public String getName() {
+    return name;
   }
 
 
-  public void setCursor(Cursor cursor) {
-    this.cursor = cursor;
-  }
-
-
-  public TemplatesRead data(List<TemplateMetaRead> data) {
-    
-    this.data = data;
-    return this;
-  }
-
-  public TemplatesRead addDataItem(TemplateMetaRead dataItem) {
-    if (this.data == null) {
-      this.data = new ArrayList<TemplateMetaRead>();
-    }
-    this.data.add(dataItem);
-    return this;
-  }
-
-   /**
-   * A list of template metadata objects
-   * @return data
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "A list of template metadata objects")
-
-  public List<TemplateMetaRead> getData() {
-    return data;
-  }
-
-
-  public void setData(List<TemplateMetaRead> data) {
-    this.data = data;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
@@ -105,23 +65,21 @@ public class TemplatesRead {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    TemplatesRead templatesRead = (TemplatesRead) o;
-    return Objects.equals(this.cursor, templatesRead.cursor) &&
-        Objects.equals(this.data, templatesRead.data);
+    InlineObject inlineObject = (InlineObject) o;
+    return Objects.equals(this.name, inlineObject.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(cursor, data);
+    return Objects.hash(name);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class TemplatesRead {\n");
-    sb.append("    cursor: ").append(toIndentedString(cursor)).append("\n");
-    sb.append("    data: ").append(toIndentedString(data)).append("\n");
+    sb.append("class InlineObject {\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();
   }

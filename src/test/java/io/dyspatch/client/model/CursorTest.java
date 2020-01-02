@@ -11,44 +11,49 @@
  */
 
 
-package io.dyspatch.client.api;
+package io.dyspatch.client.model;
 
-import io.dyspatch.client.ApiException;
-import io.dyspatch.client.model.APIError;
-import io.dyspatch.client.model.LocalizationRead;
-import org.junit.Test;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import org.junit.Assert;
 import org.junit.Ignore;
+import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
- * API tests for LocalizationsApi
+ * Model tests for Cursor
  */
-@Ignore
-public class LocalizationsApiTest {
+public class CursorTest {
+    private final Cursor model = new Cursor();
 
-    private final LocalizationsApi api = new LocalizationsApi();
-
-    
     /**
-     * Get Localization Object by ID
-     *
-     * Returns a specific localization object with a matching ID
-     *
-     * @throws ApiException
-     *          if the Api call fails
+     * Model tests for Cursor
      */
     @Test
-    public void getLocalizationByIdTest() throws ApiException {
-        String localizationId = null;
-        String targetLanguage = null;
-        String accept = null;
-        LocalizationRead response = api.getLocalizationById(localizationId, targetLanguage, accept);
-
-        // TODO: test validations
+    public void testCursor() {
+        // TODO: test Cursor
     }
-    
+
+    /**
+     * Test the property 'next'
+     */
+    @Test
+    public void nextTest() {
+        // TODO: test next
+    }
+
+    /**
+     * Test the property 'hasMore'
+     */
+    @Test
+    public void hasMoreTest() {
+        // TODO: test hasMore
+    }
+
 }
