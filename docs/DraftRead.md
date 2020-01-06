@@ -1,7 +1,10 @@
 
+
 # DraftRead
 
+template draft metadata included latest draft revision
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** | An opaque, unique identifier for a draft |  [optional]

@@ -1,7 +1,10 @@
 
+
 # DraftsRead
 
+list of draft metadata
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **cursor** | [**Cursor**](Cursor.md) |  |  [optional]

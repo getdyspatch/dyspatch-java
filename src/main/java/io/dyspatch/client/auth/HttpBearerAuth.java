@@ -19,59 +19,42 @@ import java.util.Map;
 import java.util.List;
 
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-02T21:31:14.752Z[GMT]")
-public class ApiKeyAuth implements Authentication {
-  private final String location;
-  private final String paramName;
+public class HttpBearerAuth implements Authentication {
+  private final String scheme;
+  private String bearerToken;
 
-  private String apiKey;
-  private String apiKeyPrefix;
-
-  public ApiKeyAuth(String location, String paramName) {
-    this.location = location;
-    this.paramName = paramName;
+  public HttpBearerAuth(String scheme) {
+    this.scheme = scheme;
   }
 
-  public String getLocation() {
-    return location;
+  /**
+   * Gets the token, which together with the scheme, will be sent as the value of the Authorization header.
+   *
+   * @return The bearer token
+   */
+  public String getBearerToken() {
+    return bearerToken;
   }
 
-  public String getParamName() {
-    return paramName;
-  }
-
-  public String getApiKey() {
-    return apiKey;
-  }
-
-  public void setApiKey(String apiKey) {
-    this.apiKey = apiKey;
-  }
-
-  public String getApiKeyPrefix() {
-    return apiKeyPrefix;
-  }
-
-  public void setApiKeyPrefix(String apiKeyPrefix) {
-    this.apiKeyPrefix = apiKeyPrefix;
+  /**
+   * Sets the token, which together with the scheme, will be sent as the value of the Authorization header.
+   *
+   * @param bearerToken The bearer token to send in the Authorization header
+   */
+  public void setBearerToken(String bearerToken) {
+    this.bearerToken = bearerToken;
   }
 
   @Override
   public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams) {
-    if (apiKey == null) {
+    if(bearerToken == null) {
       return;
     }
-    String value;
-    if (apiKeyPrefix != null) {
-      value = apiKeyPrefix + " " + apiKey;
-    } else {
-      value = apiKey;
-    }
-    if ("query".equals(location)) {
-      queryParams.add(new Pair(paramName, value));
-    } else if ("header".equals(location)) {
-      headerParams.put(paramName, value);
-    } else if ("cookie".equals(location)) {
-      cookieParams.put(paramName, value);
-    }
+
+    headerParams.put("Authorization", (scheme != null ? upperCaseBearer(scheme) + " " : "") + bearerToken);
+  }
+
+  private static String upperCaseBearer(String scheme) {
+    return ("bearer".equalsIgnoreCase(scheme)) ? "Bearer" : scheme;
   }
 }
