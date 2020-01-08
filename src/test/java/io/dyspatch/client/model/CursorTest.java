@@ -11,44 +11,49 @@
  */
 
 
-package io.dyspatch.client.auth;
+package io.dyspatch.client.model;
 
-import io.dyspatch.client.Pair;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
-import okhttp3.Credentials;
 
-import java.util.Map;
-import java.util.List;
+/**
+ * Model tests for Cursor
+ */
+public class CursorTest {
+    private final Cursor model = new Cursor();
 
-import java.io.UnsupportedEncodingException;
-
-public class HttpBasicAuth implements Authentication {
-    private String username;
-    private String password;
-
-    public String getUsername() {
-        return username;
+    /**
+     * Model tests for Cursor
+     */
+    @Test
+    public void testCursor() {
+        // TODO: test Cursor
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    /**
+     * Test the property 'next'
+     */
+    @Test
+    public void nextTest() {
+        // TODO: test next
     }
 
-    public String getPassword() {
-        return password;
+    /**
+     * Test the property 'hasMore'
+     */
+    @Test
+    public void hasMoreTest() {
+        // TODO: test hasMore
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    @Override
-    public void applyToParams(List<Pair> queryParams, Map<String, String> headerParams, Map<String, String> cookieParams) {
-        if (username == null && password == null) {
-            return;
-        }
-        headerParams.put("Authorization", Credentials.basic(
-            username == null ? "" : username,
-            password == null ? "" : password));
-    }
 }
