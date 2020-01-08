@@ -5,7 +5,7 @@
     <artifactId>dyspatch-java</artifactId>
     <packaging>jar</packaging>
     <name>dyspatch-java</name>
-    <version>3.0.2</version>
+    <version>4.0.0</version>
     <url>https://github.com/openapitools/openapi-generator</url>
     <description>OpenAPI Java</description>
     <scm>
