@@ -18,10 +18,3 @@ jobs:
         run: ./gradlew build
         env:
           DYSPATCH_API_KEY: ${{ secrets.DYSPATCH_API_KEY }}
-
-      - name: Test with Maven
-        uses: "LucaFeger/action-maven-cli@master"
-        with:
-          args: "clean test"
-        env:
-          DYSPATCH_API_KEY: ${{ secrets.DYSPATCH_API_KEY }}
