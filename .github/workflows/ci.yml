@@ -4,23 +4,24 @@ on: [push]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+      - uses: actions/checkout@v1
 
-    - name: Set up Java
-      uses: actions/setup-java@v1
-      with:
-        java-version: 13
+      - name: Set up Java
+        uses: actions/setup-java@v1
+        with:
+          java-version: 13
 
-    - name: Build with Gradle
-      run: ./gradlew build
+      - name: Build with Gradle
+        run: ./gradlew build
+        env:
+          DYSPATCH_API_KEY: ${{ secrets.DYSPATCH_API_KEY }}
 
-    - name: Test with Maven
-      uses: "LucaFeger/action-maven-cli@master"
-      with:
-        args: "clean test"
-      env:
-        DYSPATCH_API_KEY: ${{ secrets.DYSPATCH_API_KEY }}
+      - name: Test with Maven
+        uses: "LucaFeger/action-maven-cli@master"
+        with:
+          args: "clean test"
+        env:
+          DYSPATCH_API_KEY: ${{ secrets.DYSPATCH_API_KEY }}
