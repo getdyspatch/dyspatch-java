@@ -14,7 +14,7 @@ import org.junit.Test;
  * THESE ARE HAND BUILT AND NOT GENERATED, DO NOT DELETE
  */
 public class IntegrationTest {
-    String version = "application/vnd.dyspatch.2019.10+json";
+    String version = "application/vnd.dyspatch.2020.04+json";
     ApiClient client;
     DraftsApi drafts;
     TemplatesApi templates;
