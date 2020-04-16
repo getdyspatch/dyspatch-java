@@ -11,29 +11,57 @@
  */
 
 
-package io.dyspatch.client;
+package io.dyspatch.client.model;
+
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 
-public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+/**
+ * Model tests for APIError
+ */
+public class APIErrorTest {
+    private final APIError model = new APIError();
 
     /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
+     * Model tests for APIError
      */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+    @Test
+    public void testAPIError() {
+        // TODO: test APIError
     }
 
     /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
+     * Test the property 'code'
      */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+    @Test
+    public void codeTest() {
+        // TODO: test code
     }
+
+    /**
+     * Test the property 'message'
+     */
+    @Test
+    public void messageTest() {
+        // TODO: test message
+    }
+
+    /**
+     * Test the property 'parameter'
+     */
+    @Test
+    public void parameterTest() {
+        // TODO: test parameter
+    }
+
 }

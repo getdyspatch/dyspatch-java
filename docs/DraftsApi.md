@@ -46,7 +46,7 @@ public class Example {
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
     String languageId = "languageId_example"; // String | A language ID (eg: en-US)
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     try {
       apiInstance.deleteLocalization(draftId, languageId, accept);
     } catch (ApiException e) {
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **String**| A draft ID |
  **languageId** | **String**| A language ID (eg: en-US) |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
 
 ### Return type
 
@@ -118,7 +118,7 @@ public class Example {
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
     String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Should only be used for visual templates.
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     try {
       DraftRead result = apiInstance.getDraftById(draftId, targetLanguage, accept);
       System.out.println(result);
@@ -138,8 +138,8 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **String**| A draft ID |
- **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [enum: html, handlebars, ampscript, freemarker, cheetah]
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [enum: html, handlebars, ampscript, freemarker, cheetah, jinja]
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
 
 ### Return type
 
@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2019.10+json, */*
+ - **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 
 Get localization keys
 
-Returns the list of values that need to be translated for the draft. Set the &#x60;Accept&#x60; header to &#x60;application/vnd.dyspatch.2019.10+json&#x60; to get a JSON object, or &#x60;text/vnd.dyspatch.2019.10+x-gettext-translation&#x60; to get the POT file.
+Returns the list of values that need to be translated for the draft. Set the &#x60;Accept&#x60; header to &#x60;application/vnd.dyspatch.2020.04+json&#x60; to get a JSON object, or &#x60;text/vnd.dyspatch.2020.04+x-gettext-translation&#x60; to get the POT file.
 
 ### Example
 ```java
@@ -197,7 +197,7 @@ public class Example {
 
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     try {
       List<LocalizationKeyRead> result = apiInstance.getDraftLocalizationKeys(draftId, accept);
       System.out.println(result);
@@ -217,7 +217,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **String**| A draft ID |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
 
 ### Return type
 
@@ -230,7 +230,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2019.10+json, text/vnd.dyspatch.2019.10+x-gettext-translation
+ - **Accept**: application/vnd.dyspatch.2020.04+json, text/vnd.dyspatch.2020.04+x-gettext-translation
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -267,7 +267,7 @@ public class Example {
     //Bearer.setApiKeyPrefix("Token");
 
     DraftsApi apiInstance = new DraftsApi(defaultClient);
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     String cursor = "cursor_example"; // String | A cursor value used to retrieve a specific page from a paginated result set.
     String status = "status_example"; // String | Filter the list of drafts by a particular status
     try {
@@ -288,7 +288,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
  **cursor** | **String**| A cursor value used to retrieve a specific page from a paginated result set. | [optional]
  **status** | **String**| Filter the list of drafts by a particular status | [optional] [enum: awaitingTranslation]
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2019.10+json, */*
+ - **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -348,7 +348,7 @@ public class Example {
 
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     try {
       List<LocalizationMetaRead> result = apiInstance.getLocalizationForDraft(draftId, accept);
       System.out.println(result);
@@ -368,7 +368,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **String**| A draft ID |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
 
 ### Return type
 
@@ -381,7 +381,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2019.10+json
+ - **Accept**: application/vnd.dyspatch.2020.04+json
 
 ### HTTP response details
 | Status code | Description | Response headers |
@@ -420,7 +420,7 @@ public class Example {
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
     String languageId = "languageId_example"; // String | A language ID (eg: en-US)
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     InlineObject inlineObject = new InlineObject(); // InlineObject | 
     try {
       apiInstance.saveLocalization(draftId, languageId, accept, inlineObject);
@@ -441,7 +441,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **String**| A draft ID |
  **languageId** | **String**| A language ID (eg: en-US) |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
  **inlineObject** | [**InlineObject**](InlineObject.md)|  |
 
 ### Return type
@@ -494,7 +494,7 @@ public class Example {
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
     String languageId = "languageId_example"; // String | A language ID (eg: en-US)
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     Map<String, String> requestBody = new HashMap(); // Map<String, String> | 
     try {
       apiInstance.setTranslation(draftId, languageId, accept, requestBody);
@@ -515,7 +515,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **String**| A draft ID |
  **languageId** | **String**| A language ID (eg: en-US) |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
  **requestBody** | [**Map&lt;String, String&gt;**](String.md)|  |
 
 ### Return type
@@ -529,12 +529,13 @@ null (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: Not defined
+ - **Accept**: */*
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Successful |  -  |
+**403** | Unauthorized |  * X-RateLimit-Remaining - The number of requests left for the time window. <br>  |
 
 <a name="submitDraftForApproval"></a>
 # **submitDraftForApproval**
@@ -567,7 +568,7 @@ public class Example {
 
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     try {
       apiInstance.submitDraftForApproval(draftId, accept);
     } catch (ApiException e) {
@@ -586,7 +587,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **draftId** | **String**| A draft ID |
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
 
 ### Return type
 

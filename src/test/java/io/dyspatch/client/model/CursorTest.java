@@ -11,29 +11,49 @@
  */
 
 
-package io.dyspatch.client;
+package io.dyspatch.client.model;
+
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 
-public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+/**
+ * Model tests for Cursor
+ */
+public class CursorTest {
+    private final Cursor model = new Cursor();
 
     /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
+     * Model tests for Cursor
      */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+    @Test
+    public void testCursor() {
+        // TODO: test Cursor
     }
 
     /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
+     * Test the property 'next'
      */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+    @Test
+    public void nextTest() {
+        // TODO: test next
     }
+
+    /**
+     * Test the property 'hasMore'
+     */
+    @Test
+    public void hasMoreTest() {
+        // TODO: test hasMore
+    }
+
 }
