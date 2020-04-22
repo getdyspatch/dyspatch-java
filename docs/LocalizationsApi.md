@@ -39,7 +39,7 @@ public class Example {
     LocalizationsApi apiInstance = new LocalizationsApi(defaultClient);
     String localizationId = "localizationId_example"; // String | A localization ID
     String targetLanguage = "targetLanguage_example"; // String | The type of templating language to compile as. Should only be used for visual templates.
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2019.10\", set the value to \"application/vnd.dyspatch.2019.10+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
     try {
       LocalizationRead result = apiInstance.getLocalizationById(localizationId, targetLanguage, accept);
       System.out.println(result);
@@ -59,8 +59,8 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **localizationId** | **String**| A localization ID |
- **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [enum: html, handlebars, ampscript, freemarker, cheetah]
- **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2019.10\&quot;, set the value to \&quot;application/vnd.dyspatch.2019.10+json\&quot; |
+ **targetLanguage** | **String**| The type of templating language to compile as. Should only be used for visual templates. | [enum: html, handlebars, ampscript, freemarker, cheetah, jinja]
+ **accept** | **String**| A version of the API that should be used for the request. For example, to use version \&quot;2020.04\&quot;, set the value to \&quot;application/vnd.dyspatch.2020.04+json\&quot; |
 
 ### Return type
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/vnd.dyspatch.2019.10+json, */*
+ - **Accept**: application/vnd.dyspatch.2020.04+json, */*
 
 ### HTTP response details
 | Status code | Description | Response headers |

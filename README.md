@@ -1,7 +1,7 @@
 # Dyspatch Java API client
 
 Dyspatch API
-- API version: 2019.10
+- API version: 2020.04
   - Build date: 2020-01-02T21:36:38.986Z[GMT]
 
 # Introduction
@@ -48,7 +48,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.dyspatch</groupId>
   <artifactId>dyspatch-java</artifactId>
-  <version>4.0.0</version>
+  <version>5.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.dyspatch:dyspatch-java:4.0.0"
+compile "io.dyspatch:dyspatch-java:5.0.0"
 ```
 
 ### Others
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dyspatch-java-4.0.0.jar`
+* `target/dyspatch-java-5.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -101,7 +101,7 @@ public class Example {
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
     String languageId = "languageId_example"; // String | A language ID (eg: en-US)
-    String accept = "application/vnd.dyspatch.2019.10+json";
+    String accept = "application/vnd.dyspatch.2020.04+json";
     try {
       apiInstance.deleteLocalization(draftId, languageId, accept);
     } catch (ApiException e) {

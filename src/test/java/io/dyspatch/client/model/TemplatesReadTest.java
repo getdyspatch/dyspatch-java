@@ -11,29 +11,53 @@
  */
 
 
-package io.dyspatch.client;
+package io.dyspatch.client.model;
+
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import io.dyspatch.client.model.Cursor;
+import io.dyspatch.client.model.TemplateMetaRead;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
 
 
-public class Configuration {
-    private static ApiClient defaultApiClient = new ApiClient();
+/**
+ * Model tests for TemplatesRead
+ */
+public class TemplatesReadTest {
+    private final TemplatesRead model = new TemplatesRead();
 
     /**
-     * Get the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @return Default API client
+     * Model tests for TemplatesRead
      */
-    public static ApiClient getDefaultApiClient() {
-        return defaultApiClient;
+    @Test
+    public void testTemplatesRead() {
+        // TODO: test TemplatesRead
     }
 
     /**
-     * Set the default API client, which would be used when creating API
-     * instances without providing an API client.
-     *
-     * @param apiClient API client
+     * Test the property 'cursor'
      */
-    public static void setDefaultApiClient(ApiClient apiClient) {
-        defaultApiClient = apiClient;
+    @Test
+    public void cursorTest() {
+        // TODO: test cursor
     }
+
+    /**
+     * Test the property 'data'
+     */
+    @Test
+    public void dataTest() {
+        // TODO: test data
+    }
+
 }
