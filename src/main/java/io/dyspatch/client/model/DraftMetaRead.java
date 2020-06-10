@@ -1,6 +1,6 @@
 /*
  * Dyspatch API
- * # Introduction The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch. ## API Client Libraries Dyspatch provides API Clients for popular languages and web frameworks. - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
+ * # Introduction  The Dyspatch API is based on the REST paradigm, and features resource based URLs with standard HTTP response codes to indicate errors. We use standard HTTP authentication and request verbs, and all responses are JSON formatted. See our [Implementation Guide](https://docs.dyspatch.io/development/implementing_dyspatch/) for more details on how to implement Dyspatch.  ## API Client Libraries Dyspatch provides API Clients for popular languages and web frameworks.  - [Java](https://github.com/getdyspatch/dyspatch-java) - [Javascript](https://github.com/getdyspatch/dyspatch-javascript) - [Python](https://github.com/getdyspatch/dyspatch-python) - [C#](https://github.com/getdyspatch/dyspatch-dotnet) - [Go](https://github.com/getdyspatch/dyspatch-golang) - [Ruby](https://github.com/getdyspatch/dyspatch-ruby) 
  *
  * The version of the OpenAPI document: 2020.04
  * Contact: support@dyspatch.io
@@ -42,10 +42,6 @@ public class DraftMetaRead {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
-
-  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
-  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  private String description;
 
   public static final String SERIALIZED_NAME_URL = "url";
   @SerializedName(SERIALIZED_NAME_URL)
@@ -126,29 +122,6 @@ public class DraftMetaRead {
 
   public void setName(String name) {
     this.name = name;
-  }
-
-
-  public DraftMetaRead description(String description) {
-    
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * A description of the draft
-   * @return description
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "A description of the draft")
-
-  public String getDescription() {
-    return description;
-  }
-
-
-  public void setDescription(String description) {
-    this.description = description;
   }
 
 
@@ -233,7 +206,6 @@ public class DraftMetaRead {
     return Objects.equals(this.id, draftMetaRead.id) &&
         Objects.equals(this.templateId, draftMetaRead.templateId) &&
         Objects.equals(this.name, draftMetaRead.name) &&
-        Objects.equals(this.description, draftMetaRead.description) &&
         Objects.equals(this.url, draftMetaRead.url) &&
         Objects.equals(this.createdAt, draftMetaRead.createdAt) &&
         Objects.equals(this.updatedAt, draftMetaRead.updatedAt);
@@ -241,7 +213,7 @@ public class DraftMetaRead {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, templateId, name, description, url, createdAt, updatedAt);
+    return Objects.hash(id, templateId, name, url, createdAt, updatedAt);
   }
 
 
@@ -252,7 +224,6 @@ public class DraftMetaRead {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    url: ").append(toIndentedString(url)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
