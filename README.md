@@ -48,7 +48,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.dyspatch</groupId>
   <artifactId>dyspatch-java</artifactId>
-  <version>5.0.0</version>
+  <version>5.0.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -58,7 +58,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.dyspatch:dyspatch-java:5.0.0"
+compile "io.dyspatch:dyspatch-java:5.0.1"
 ```
 
 ### Others
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dyspatch-java-5.0.0.jar`
+* `target/dyspatch-java-5.0.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
