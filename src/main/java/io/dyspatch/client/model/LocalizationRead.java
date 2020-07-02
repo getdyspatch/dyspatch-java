@@ -24,9 +24,9 @@ import io.dyspatch.client.model.CompiledRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * localization metadata and latest revision for associated template
@@ -102,7 +102,7 @@ public class LocalizationRead {
 
   public LocalizationRead addLanguagesItem(String languagesItem) {
     if (this.languages == null) {
-      this.languages = new ArrayList<String>();
+      this.languages = new ArrayList<>();
     }
     this.languages.add(languagesItem);
     return this;
