@@ -24,9 +24,9 @@ import io.dyspatch.client.model.LocalizationMetaRead;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
-import org.threeten.bp.OffsetDateTime;
 
 /**
  * the template metadata
@@ -163,7 +163,7 @@ public class TemplateMetaRead {
 
   public TemplateMetaRead addLocalizationsItem(LocalizationMetaRead localizationsItem) {
     if (this.localizations == null) {
-      this.localizations = new ArrayList<LocalizationMetaRead>();
+      this.localizations = new ArrayList<>();
     }
     this.localizations.add(localizationsItem);
     return this;

@@ -74,7 +74,7 @@ public class TemplatesRead {
 
   public TemplatesRead addDataItem(TemplateMetaRead dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<TemplateMetaRead>();
+      this.data = new ArrayList<>();
     }
     this.data.add(dataItem);
     return this;

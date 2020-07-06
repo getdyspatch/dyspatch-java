@@ -20,9 +20,6 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import okio.BufferedSink;
 import okio.Okio;
-import org.threeten.bp.LocalDate;
-import org.threeten.bp.OffsetDateTime;
-import org.threeten.bp.format.DateTimeFormatter;
 
 import javax.net.ssl.*;
 import java.io.File;
@@ -30,6 +27,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URI;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
@@ -40,6 +38,9 @@ import java.security.cert.CertificateException;
 import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
@@ -80,6 +81,7 @@ public class ApiClient {
      */
     public ApiClient() {
         init();
+        initHttpClient();
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications.put("Bearer", new ApiKeyAuth("header", "Authorization"));
@@ -87,18 +89,27 @@ public class ApiClient {
         authentications = Collections.unmodifiableMap(authentications);
     }
 
-    private void init() {
+    private void initHttpClient() {
+        initHttpClient(Collections.<Interceptor>emptyList());
+    }
+
+    private void initHttpClient(List<Interceptor> interceptors) {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         builder.addNetworkInterceptor(getProgressInterceptor());
+        for (Interceptor interceptor: interceptors) {
+            builder.addInterceptor(interceptor);
+        }
+
         httpClient = builder.build();
+    }
 
-
+    private void init() {
         verifyingSsl = true;
 
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("OpenAPI-Generator/5.0.1/java");
+        setUserAgent("OpenAPI-Generator/5.0.2/java");
 
         authentications = new HashMap<String, Authentication>();
     }

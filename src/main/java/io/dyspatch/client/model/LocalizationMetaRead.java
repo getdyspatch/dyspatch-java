@@ -153,7 +153,7 @@ public class LocalizationMetaRead {
 
   public LocalizationMetaRead addLanguagesItem(String languagesItem) {
     if (this.languages == null) {
-      this.languages = new ArrayList<String>();
+      this.languages = new ArrayList<>();
     }
     this.languages.add(languagesItem);
     return this;
