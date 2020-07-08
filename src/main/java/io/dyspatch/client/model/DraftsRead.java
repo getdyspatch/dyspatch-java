@@ -74,7 +74,7 @@ public class DraftsRead {
 
   public DraftsRead addDataItem(DraftMetaRead dataItem) {
     if (this.data == null) {
-      this.data = new ArrayList<DraftMetaRead>();
+      this.data = new ArrayList<>();
     }
     this.data.add(dataItem);
     return this;
