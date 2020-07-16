@@ -11,6 +11,7 @@ jobs:
         with:
           repository: techdroplabs/api-setup-action
           token: ${{ secrets.MACHINES_SWU_TOKEN }}
+          ref: master
       - name: Run api setup action
         uses: ./
         with:
