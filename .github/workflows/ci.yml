@@ -12,8 +12,6 @@ jobs:
           repository: techdroplabs/api-setup-action
           token: ${{ secrets.MACHINES_SWU_TOKEN }}
           ref: master
-      - name: Dump Value
-        run: echo ${{ secrets.COGNITO_POOL_ID }}
       - name: Run api setup action
         uses: ./
         with:
