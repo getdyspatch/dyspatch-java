@@ -7,6 +7,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+        with:
+          repository: techdroplabs/api-setup-action
+          token: ${{ secrets.MACHINES_SWU_TOKEN }}
+      - name: Run api setup action
+          uses: ./
+          # with:
+          #   who-to-greet: "Mona the Octocat"
+
       - uses: actions/checkout@v1
 
       - name: Set up Java
