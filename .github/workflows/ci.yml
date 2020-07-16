@@ -13,8 +13,15 @@ jobs:
           token: ${{ secrets.MACHINES_SWU_TOKEN }}
       - name: Run api setup action
           uses: ./
-          # with:
-          #   who-to-greet: "Mona the Octocat"
+          with:
+            email: ${{ secrets.QA_USERNAME }}
+            password: ${{ secrets.QA_PASSWORD }}
+            cognito_client_id: ${{ secrets.COGNITO_CLIENT_ID }}
+            cognito_client_secret: ${{ secrets.COGNITO_CLIENT_SECRET }}
+            cognito_pool_id: ${{ secrets.COGNITO_POOL_ID }}
+            web_sso_host: ${{ secrets.WEB_SSO_HOST }}
+            web_sso_redirect_host: ${{ secrets.WEB_SSO_REDIRECT_HOST }}
+            graphql_host: ${{ secrets.GRAPHQL_HOST }}
 
       - uses: actions/checkout@v1
 
