@@ -28,7 +28,7 @@ jobs:
           cognito_pool_id: ${{ secrets.COGNITO_POOL_ID }}
           web_sso_host: ${{ secrets.WEB_SSO_HOST }}
           web_sso_redirect_host: ${{ secrets.WEB_SSO_REDIRECT_HOST }}
-          graphql_host: ${{ secrets.GRAPHQL_URL }}
+          graphql_url: ${{ secrets.GRAPHQL_URL }}
 
       - uses: actions/checkout@v1
 
