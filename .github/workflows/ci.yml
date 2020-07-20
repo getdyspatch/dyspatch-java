@@ -7,6 +7,29 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - uses: actions/checkout@v2
+        with:
+          repository: techdroplabs/api-setup-action
+          token: ${{ secrets.MACHINES_SWU_TOKEN }}
+          ref: master
+      - name: Run api setup action
+        uses: ./
+        with:
+          email: ${{ secrets.QA_USERNAME }}
+          password: ${{ secrets.QA_PASSWORD }}
+          cognito_client_id: ${{ secrets.COGNITO_CLIENT_ID }}
+          cognito_client_secret: ${{ secrets.COGNITO_CLIENT_SECRET }}
+          cognito_pool_id: ${{ secrets.COGNITO_POOL_ID }}
+          web_sso_host: ${{ secrets.WEB_SSO_HOST }}
+          web_sso_redirect_host: ${{ secrets.WEB_SSO_REDIRECT_HOST }}
+          graphql_url: ${{ secrets.GRAPHQL_URL }}
+
       - uses: actions/checkout@v1
 
       - name: Set up Java
