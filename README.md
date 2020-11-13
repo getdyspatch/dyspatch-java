@@ -1,7 +1,7 @@
 # dyspatch-java
 
 Dyspatch API
-- API version: 2020.04
+- API version: 2020.11
 
 # Introduction
 
@@ -56,7 +56,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.dyspatch</groupId>
   <artifactId>dyspatch-java</artifactId>
-  <version>5.0.2</version>
+  <version>7.0.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -66,7 +66,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.dyspatch:dyspatch-java:5.0.2"
+compile "io.dyspatch:dyspatch-java:7.0.0"
 ```
 
 ### Others
@@ -79,7 +79,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/dyspatch-java-5.0.2.jar`
+* `target/dyspatch-java-7.0.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -110,7 +110,7 @@ public class Example {
     DraftsApi apiInstance = new DraftsApi(defaultClient);
     String draftId = "draftId_example"; // String | A draft ID
     String languageId = "languageId_example"; // String | A language ID (eg: en-US)
-    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.04\", set the value to \"application/vnd.dyspatch.2020.04+json\"
+    String accept = "accept_example"; // String | A version of the API that should be used for the request. For example, to use version \"2020.11\", set the value to \"application/vnd.dyspatch.2020.11+json\"
     try {
       apiInstance.deleteLocalization(draftId, languageId, accept);
     } catch (ApiException e) {
