@@ -7,6 +7,7 @@ import io.dyspatch.client.auth.*;
 import io.dyspatch.client.api.DraftsApi;
 import io.dyspatch.client.api.TemplatesApi;
 
+import io.dyspatch.client.model.InlineObject;
 import org.junit.Test;
 
 /**
@@ -14,7 +15,7 @@ import org.junit.Test;
  * THESE ARE HAND BUILT AND NOT GENERATED, DO NOT DELETE
  */
 public class IntegrationTest {
-    String version = "application/vnd.dyspatch.2020.04+json";
+    String version = "application/vnd.dyspatch.2020.11+json";
     ApiClient client;
     DraftsApi drafts;
     TemplatesApi templates;
@@ -22,6 +23,10 @@ public class IntegrationTest {
 
     public IntegrationTest() {
         client = Configuration.getDefaultApiClient();
+        String basePath = System.getenv("DYSPATCH_BASE_PATH");
+        if (basePath.length() > 0) {
+            client.setBasePath(basePath);
+        }
         client.setApiKey(System.getenv("DYSPATCH_API_KEY"));
         client.setApiKeyPrefix("Bearer");
 
@@ -33,7 +38,7 @@ public class IntegrationTest {
     public void getTemplates() throws ApiException {
         templates.getTemplates(version, "");
 
-        String templateId = "tem_01de5teh6k59kya8q92mb01qzq";
+        String templateId = System.getenv("templateId");
         templates.getTemplateById(templateId, "handlebars", version);
     }
 
@@ -41,7 +46,15 @@ public class IntegrationTest {
     public void getDrafts() throws ApiException {
         drafts.getDrafts(version, "", "");
 
-        String draftId = "tdft_01dxkwr0nevs5h2baa3n3dgktp";
+        String draftId = System.getenv("draftId");
         drafts.getDraftById(draftId, "handlebars", version);
+    }
+
+    @Test
+    public void localizations() throws ApiException {
+        String draftId = System.getenv("draftId");
+        InlineObject io = new InlineObject();
+        io.name("moonbeam");
+        drafts.saveLocalization(draftId, "en-CA", version, io);
     }
 }
