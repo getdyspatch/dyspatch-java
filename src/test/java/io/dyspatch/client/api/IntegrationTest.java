@@ -24,7 +24,7 @@ public class IntegrationTest {
     public IntegrationTest() {
         client = Configuration.getDefaultApiClient();
         String basePath = System.getenv("DYSPATCH_BASE_PATH");
-        if (basePath.length() > 0) {
+        if (basePath != null && basePath.length() > 0) {
             client.setBasePath(basePath);
         }
         client.setApiKey(System.getenv("DYSPATCH_API_KEY"));
