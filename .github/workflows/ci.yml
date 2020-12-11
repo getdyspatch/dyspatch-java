@@ -38,8 +38,8 @@ jobs:
           java-version: 13
 
       - name: Verify Outputs
-        run: "echo ${{ steps.vars.outputs.templateId }}
-        
+        run: "echo ${{ steps.vars.outputs.templateId }}"
+
       - name: Build with Gradle
         run: ./gradlew build
         env:
