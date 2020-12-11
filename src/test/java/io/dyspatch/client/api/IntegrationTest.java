@@ -38,7 +38,7 @@ public class IntegrationTest {
     public void getTemplates() throws ApiException {
         templates.getTemplates(version, "");
 
-        String templateId = System.getenv("templateId");
+        String templateId = System.getenv("INPUT_TEMPLATE_ID");
         templates.getTemplateById(templateId, "handlebars", version);
     }
 
@@ -46,13 +46,13 @@ public class IntegrationTest {
     public void getDrafts() throws ApiException {
         drafts.getDrafts(version, "", "");
 
-        String draftId = System.getenv("draftId");
+        String draftId = System.getenv("INPUT_DRAFT_ID");
         drafts.getDraftById(draftId, "handlebars", version);
     }
 
     @Test
     public void localizations() throws ApiException {
-        String draftId = System.getenv("draftId");
+        String draftId = System.getenv("INPUT_DRAFT_ID");
         InlineObject io = new InlineObject();
         io.name("moonbeam");
         drafts.saveLocalization(draftId, "en-CA", version, io);
