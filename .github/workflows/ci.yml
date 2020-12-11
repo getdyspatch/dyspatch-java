@@ -41,6 +41,5 @@ jobs:
         run: ./gradlew build
         env:
           DYSPATCH_API_KEY: ${{ secrets.DYSPATCH_API_KEY }}
-        with:
-          template_id: ${{ steps.vars.outputs.templateId }}
-          draft_id: ${{ steps.vars.outputs.draftId }}
+          DYSPATCH_TEMPLATE_ID: ${{ steps.vars.outputs.templateId }}
+          DYSPATCH_DRAFT_ID: ${{ steps.vars.outputs.draftId }}
