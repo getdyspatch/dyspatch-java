@@ -3,12 +3,16 @@ package io.dyspatch.client.api;
 import io.dyspatch.client.ApiClient;
 import io.dyspatch.client.ApiException;
 import io.dyspatch.client.Configuration;
-import io.dyspatch.client.auth.*;
-import io.dyspatch.client.api.DraftsApi;
-import io.dyspatch.client.api.TemplatesApi;
-
+import io.dyspatch.client.auth.ApiKeyAuth;
 import io.dyspatch.client.model.InlineObject;
+import io.dyspatch.client.model.LocalizationKeyRead;
+import io.dyspatch.client.model.LocalizationMetaRead;
 import org.junit.Test;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Integration tests.
@@ -56,5 +60,21 @@ public class IntegrationTest {
         InlineObject io = new InlineObject();
         io.name("moonbeam");
         drafts.saveLocalization(draftId, "en-CA", version, io);
+        List<LocalizationMetaRead> localizations = drafts.getLocalizationForDraft(draftId, version);
+        assertThat(localizations, hasSize(1));
+        assertThat(localizations.get(0).getName(), equalTo("moonbeam"));
+
+        HashMap<String, String> values = new HashMap<>();
+        values.put("test", "value");
+        drafts.setTranslation(draftId, "en-CA", version, values);
+
+        List<LocalizationKeyRead> keys = drafts.getDraftLocalizationKeys(draftId, version);
+        assertThat(keys, hasSize(0));
+
+        drafts.deleteLocalization(draftId, "en-CA", version);
+        localizations = drafts.getLocalizationForDraft(draftId, version);
+        assertThat(localizations, hasSize(0));
+
+        drafts.submitDraftForApproval(draftId, version);
     }
 }
