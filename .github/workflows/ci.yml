@@ -19,6 +19,7 @@ jobs:
           token: ${{ secrets.MACHINES_SWU_TOKEN }}
           ref: master
       - name: Run api setup action
+        id: setup_action
         uses: ./
         with:
           email: ${{ secrets.QA_USERNAME }}
@@ -37,7 +38,9 @@ jobs:
         with:
           java-version: 13
 
-      - name: Build with Gradle
+      - name: Build and Test with Gradle
         run: ./gradlew build
         env:
           DYSPATCH_API_KEY: ${{ secrets.DYSPATCH_API_KEY }}
+          DYSPATCH_TEMPLATE_ID: ${{ steps.setup_action.outputs.templateId }}
+          DYSPATCH_DRAFT_ID: ${{ steps.setup_action.outputs.draftId }}
